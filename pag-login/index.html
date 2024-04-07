@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Tecsidel</title>
+    <link rel="icon" href="images/Logo_.png" type="image/png">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Olá Bel</h1>
+    <div class="container"> 
+        <div class="retangulo">
+            <img class="logo" src="./images/Logo.png" alt="Logo da Tecsidel">
+        </div>
+
+        <div class="retangulo1"> <!-- Deixa como form mesmo não enviando a um formulário? Ou criamos um formulario para validar e passamos a senha? -->
+            <form>
+                <label for="idmatricula">Matrícula</label>
+                <input type="email" name="matricula" id="idmatricula">
+            </form>
+        </div>
+
+        <div class="retangulo2">
+            <form>
+                <label for="idsenha">Senha</label>
+                <input type="password" name="senha" id="idsenha">
+            </form>
+        </div>
+
+        <div class="retangulo3">
+            <button type="submit">Acessar</button>
+        </div>
+    </div>
 </body>
 </html>
