@@ -4,7 +4,7 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     background: linear-gradient(180deg, rgba(1, 83, 160, 0.00) 0%, #00519E 63.07%), linear-gradient(180deg, #1189FA 0%, #1189FA 0.01%, #0A71D3 45.7%);
 }
@@ -39,7 +39,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 22%;
+    width: 20%;
 }
 
 .retangulo1 {
@@ -63,7 +63,7 @@ h1 {
 }
 
 button {
-    width: 100%;
+    width: 110%;
     padding: 15px;
     border-radius: 20px; 
     background-color: #3BC7F4;
