@@ -1,0 +1,84 @@
+/* ESTRUTURA PADRÃO DE TODAS AS PÁGINAS */
+
+html, body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    background-color: #fafafa;
+    padding: 20px 2%;
+    margin-left: 15%;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(1, 83, 160, 0.00) 0%, #00519E 63.07%), linear-gradient(180deg, #1189FA 0%, #1189FA 0.01%, #0A71D3 45.7%);
+}
+
+.naveg h3{
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.sidebar{
+    padding: 15px;
+}
+
+.usuario{
+    display: flex;
+    align-items: center; 
+    color: white;
+    margin-top: 10px;
+}
+
+.usuario i{
+    margin-right: 15px;
+    margin-left: 10px; 
+}
+
+.usuario h3{
+    font-size: 15px; 
+    font-weight: 100;
+}
+
+.naveg a{
+    position: relative; 
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-size: 15px; 
+    font-weight: 100;
+    padding: 10px;
+}
+
+.naveg a:before {
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 110%; 
+    height: 100%;
+    background-color: #ccc;
+    z-index: 1; 
+    opacity: 0; 
+    transition: opacity 0.3s; 
+    border-radius: 20px;
+}
+
+.naveg a:hover::before {
+    opacity: 0.2; 
+}
+
+.naveg a i {
+    margin-right: 20px;
+}
+
+/* ESTRUTURA PADRÃO DE TODAS AS PÁGINAS */
