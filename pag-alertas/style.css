@@ -49,8 +49,8 @@ header{
 }
 
 .naveg a{
+    display: block;
     position: relative; 
-    display: inline-block;
     color: white;
     text-decoration: none;
     margin-bottom: 15px;
