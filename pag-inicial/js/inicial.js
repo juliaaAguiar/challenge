@@ -1,87 +1,144 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Dados dos gráficos
-    var data1 = [{
-        x: [1, 2, 3, 4, 5],
-        y: [1, 2, 3, 4, 5],
+document.addEventListener('DOMContentLoaded', function () {
+    // Tamanho dos gráficos
+    var graphWidth = 300;
+    var graphHeight = 300;
+
+    // Gráfico de dispersão
+    var scatterCtx = document.getElementById('graph1').getContext('2d');
+    var scatterChart = new Chart(scatterCtx, {
         type: 'scatter',
-        name: 'Gráfico 1' // Nome do gráfico
-        
-    }];
+        data: {
+            datasets: [{
+                label: 'Incidentes',
+                data: [{ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }, { x: 4, y: 4 }, { x: 5, y: 5 }],
+                backgroundColor: '#1186F6',
+                borderColor: '#1186F6',
+                borderWidth: 1
 
-    var data2 = [{
-        labels: ['A', 'B', 'C', 'D', 'E'],
-        values: [10, 20, 30, 40, 50],
-        type: 'pie',
-        hole: 0.4, // Ajuste o tamanho do buraco para criar um gráfico de rosca
-        name: 'Gráfico 2' // Nome do gráfico
-    }];
+            }]
+        },
+        options: {
+            responsive: false,
+            maintainAspectRatio: false,
+            width: graphWidth,
+            height: graphHeight,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Eixo X'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Eixo Y'
+                    }
+                }
+            }
+        }
+    });
 
-    var data3 = [{
-        x: [1, 2, 3, 4, 5],
-        y: [2, 3, 2, 3, 2],
+    // Gráfico de rosca
+    var doughnutCtx = document.getElementById('graph2').getContext('2d');
+    var doughnutChart = new Chart(doughnutCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Caminhão', 'Carro', 'Moto', 'Ônibus', 'Diversos'],
+            datasets: [{
+                label: 'Gráfico de Rosca',
+                data: [10, 20, 30, 40, 50],
+                backgroundColor: [
+                    '#C7CEFF',
+                    '#1186F6',
+                    '#035AAC',
+                    '#37375C',
+                    '#00519E'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: false,
+            maintainAspectRatio: false,
+            width: graphWidth,
+            height: graphHeight,
+            scales: {
+                x: {
+                    display: false,
+                },
+                y: {
+                    display: false,
+                }
+            }
+        }
+    });
+
+    // Gráfico de barra
+    var barCtx = document.getElementById('graph3').getContext('2d');
+    var barChart = new Chart(barCtx, {
         type: 'bar',
-        name: 'Gráfico 3' // Nome do gráfico
-    }];
-
-    // Layout dos gráficos
-    var layout1 = {
-        width: 400, // Largura do gráfico
-        height: 300, // Altura do gráfico
-        title: 'Gráfico de Dispersão', // Título do painel
-        xaxis: {
-            title: 'Eixo X' // Título do eixo X
+        data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
+            datasets: [{
+                label: 'Fluxo de veículos',
+                data: [12, 19, 3, 5, 2],
+                backgroundColor: [
+                    '#035AAC',
+                    '#37375C',
+                    '#00519E'
+                ],
+                borderWidth: 1
+            }]
         },
-        yaxis: {
-            title: 'Eixo Y' // Título do eixo Y
-        },
-        config: { displayModeBar: false } // Desabilitar as configurações do gráfico
-    };
+        options: {
+            responsive: false,
+            maintainAspectRatio: false,
+            width: graphWidth,
+            height: graphHeight,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 
-    var layout2 = {
-        width: 400, // Largura do gráfico
-        height: 300, // Altura do gráfico
-        title: 'Gráfico de Rosca', // Título do painel
-        hole: 0.4, // Ajuste o tamanho do buraco para criar um gráfico de rosca
-        config: { displayModeBar: false } // Desabilitar as configurações do gráfico
-    };
-
-    var layout3 = {
-        width: 400, // Largura do gráfico
-        height: 300, // Altura do gráfico
-        title: 'Gráfico de Barra', // Título do painel
-        xaxis: {
-            title: 'Categorias' // Título do eixo X
-        },
-        yaxis: {
-            title: 'Valores' // Título do eixo Y
-        },
-        config: { displayModeBar: false } // Desabilitar as configurações do gráfico
-    };
-
-    // Renderizando os gráficos
-    Plotly.newPlot('graph1', data1, layout1, { displayModeBar: false });
-    Plotly.newPlot('graph2', data2, layout2, { displayModeBar: false });
-    Plotly.newPlot('graph3', data3, layout3, { displayModeBar: false });
-    
-
-    // Criando uma tabela
-    var tableData = [
-        ['Nome', 'Idade', 'Profissão'],
-        ['João', 30, 'Engenheiro'],
-        ['Maria', 25, 'Designer'],
-        ['Carlos', 35, 'Programador']
+    // Dados para a tabela
+    var data = [
+        { nome: 'João', idade: 30, cidade: 'São Paulo' },
+        { nome: 'Maria', idade: 25, cidade: 'Rio de Janeiro' },
+        { nome: 'Carlos', idade: 35, cidade: 'Belo Horizonte' }
     ];
 
+    // Criação da tabela
+    var tableContainer = document.getElementById('table-container');
     var table = document.createElement('table');
-    table.classList.add('table');
+    var thead = document.createElement('thead');
+    var tbody = document.createElement('tbody');
 
-    for (var i = 0; i < tableData.length; i++) {
-        var row = table.insertRow();
-        for (var j = 0; j < tableData[i].length; j++) {
-            var cell = row.insertCell();
-            cell.textContent = tableData[i][j];
-        }
+    // Criação do cabeçalho da tabela
+    var headRow = document.createElement('tr');
+    for (var key in data[0]) {
+        var th = document.createElement('th');
+        th.textContent = key.charAt(0).toUpperCase() + key.slice(1); // Capitaliza o texto
+        headRow.appendChild(th);
     }
+    thead.appendChild(headRow);
+    table.appendChild(thead);
 
-    document.getElementById('table').appendChild(table);
+    // Preenchimento da tabela com os dados
+    data.forEach(function (item) {
+        var row = document.createElement('tr');
+        for (var key in item) {
+            var cell = document.createElement('td');
+            cell.textContent = item[key];
+            row.appendChild(cell);
+        }
+        tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+
+    // Adiciona a tabela ao container
+    tableContainer.appendChild(table);
 });

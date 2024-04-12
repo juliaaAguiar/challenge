@@ -180,11 +180,11 @@ header {
 .graph-container {
     display: flex;
     justify-content: flex-end;
-        margin-top: 20px; /* Ajuste conforme necessário */
+    margin-top: 20px;
 }
 
 canvas {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombreamento suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 canvas {
@@ -192,8 +192,9 @@ canvas {
 }
 
 canvas:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
+
 canvas {
     background: linear-gradient(45deg, #ffffff, #fefafa);
 }
@@ -202,6 +203,22 @@ canvas {
     border-radius: 10px;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
 
 /* JavaScript */
 
