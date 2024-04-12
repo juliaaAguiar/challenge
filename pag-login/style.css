@@ -1,5 +1,6 @@
-/* Página de login */
-.body_l{
+/* PG LOGIN */
+
+.body_l {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
@@ -8,16 +9,16 @@
     background: linear-gradient(180deg, rgba(1, 83, 160, 0.00) 0%, #00519E 63.07%), linear-gradient(180deg, #1189FA 0%, #1189FA 0.01%, #0A71D3 45.7%);
 }
 
-.container{
+.container {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    align-items: center; 
-    justify-content: center; 
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
-.retangulo{
+.retangulo {
     width: 80%;
     max-width: 500px;
     height: auto;
@@ -31,37 +32,38 @@
     flex-direction: column;
 }
 
-.logo_l{
-    width: 50%; 
-    max-width: 200px;         
-    margin-top: 5vh; 
+.logo_l {
+    width: 50%;
+    max-width: 200px;
+    margin-top: 5vh;
 }
 
 .retangulo1,
 .retangulo2 {
-    width: 80%; 
-    max-width: 300px; 
-    margin-top: 20px; 
-    box-sizing: border-box; 
-    padding: 0 5px; 
+    width: 80%;
+    max-width: 300px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding: 0 5px;
 }
+
 .retangulo3 {
     width: 100%;
     max-width: 300px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente todo o conteúdo */
-    justify-content: center; /* Centraliza verticalmente todo o conteúdo */
+    align-items: center;
+    justify-content: center;
 }
 
-.retangulo3 a{
-    padding: 13px 40px; 
-    border-radius: 20px; 
+.retangulo3 a {
+    padding: 13px 40px;
+    border-radius: 20px;
     background: linear-gradient(180deg, rgba(1, 83, 160, 0.00) 0%, #00519E 63.07%), linear-gradient(180deg, #1189FA 0%, #1189FA 0.01%, #0A71D3 45.7%);
     color: white;
     font-size: 16px;
-    cursor: pointer;    
+    cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none;
     margin: 10px;
@@ -69,41 +71,43 @@
 }
 
 input[type="email"],
-input[type="password"]{
+input[type="password"] {
     padding: 10px;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 20px;
-    max-width: 100%; 
+    max-width: 100%;
 }
 
 .retangulo1 label,
-.retangulo2 label{
-    margin-top: 10px; 
+.retangulo2 label {
+    margin-top: 10px;
 }
 
 .retangulo1 input,
-.retangulo2 input{
-    margin-top: 5px; 
+.retangulo2 input {
+    margin-top: 5px;
 }
-/* Página de login */
+
+/* LOGIN */
 
 
 /* ESTRUTURA PADRÃO DE TODAS AS PÁGINAS */
 
-html, body{
+html,
+body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
 
-header{
+header {
     background-color: #fafafa;
     padding: 20px 2%;
     margin-left: 15%;
     border-bottom: 1px solid #ccc;
 }
 
-.menu{
+.menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -112,115 +116,145 @@ header{
     background: linear-gradient(180deg, rgba(1, 83, 160, 0.00) 0%, #00519E 63.07%), linear-gradient(180deg, #1189FA 0%, #1189FA 0.01%, #0A71D3 45.7%);
 }
 
-.naveg h3{
+.naveg h3 {
     color: white;
     margin-top: 50px;
     margin-bottom: 25px;
 }
 
-.sidebar{
+.sidebar {
     padding: 15px;
 }
 
-.usuario{
+.usuario {
     display: flex;
-    align-items: center; 
+    align-items: center;
     color: white;
     margin-top: 10px;
 }
 
-.usuario i{
+.usuario i {
     margin-right: 15px;
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 
-.usuario h3{
-    font-size: 15px; 
+.usuario h3 {
+    font-size: 15px;
     font-weight: 100;
 }
 
-.naveg a{
+.naveg a {
     display: block;
-    position: relative; 
+    position: relative;
     color: white;
     text-decoration: none;
     margin-bottom: 15px;
-    font-size: 2vh; 
+    font-size: 2vh;
     font-weight: 100;
     padding: 8px;
 }
 
-.naveg a:before{
-    content: ""; 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 105%; 
+.naveg a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 105%;
     height: 100%;
     background-color: #ccc;
-    z-index: 1; 
-    opacity: 0; 
-    transition: opacity 0.3s; 
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
     border-radius: 20px;
 }
 
-.naveg a:hover::before{
-    opacity: 0.2; 
+.naveg a:hover::before {
+    opacity: 0.2;
 }
 
-.naveg a i{
+.naveg a i {
     margin-right: 10px;
 }
 
+/* JavaScript */
+.graph-container {
+    display: flex;
+    justify-content: flex-end;
+        margin-top: 20px; /* Ajuste conforme necessário */
+}
+
+canvas {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombreamento suave */
+}
+
+canvas {
+    transition: transform 0.3s ease;
+}
+
+canvas:hover {
+    transform: scale(1.1); 
+}
+canvas {
+    background: linear-gradient(45deg, #ffffff, #fefafa);
+}
+
+canvas {
+    border-radius: 10px;
+}
+
+
+/* JavaScript */
+
 /* Estilos para telas menores que 800px de largura */
 @media screen and (max-width: 800px) {
-    header{
+    header {
         padding: 10px;
     }
 
-    header img{
+    header img {
         margin-left: 40%;
-        width: 30%; 
-        max-width: 100px;         
-        }
-        
-        .menu{
-            width: 28%;
-        }
-            
-        .sidebar{
-            padding: 1px;
-        }
-        
-        .usuario i{
-            margin-right: 25px;
-            margin-left: 15px; 
-            margin-top: 10px;
-        }
-        
-        .usuario h3 {
-            display: none;
-        }
-        
-        .naveg a{
-            margin-bottom: 5px;
-            
-        }
-
-        .naveg h3{
-            margin-top: 45px;
-            margin-bottom: 2px;
-            margin-left: 10px;
-        }
-
-        .naveg a:before{
-            width: 100%;
-        }
-                
-        .naveg a i{
-            margin-right: 8px;
-        }
+        width: 30%;
+        max-width: 100px;
     }
+
+    .menu {
+        width: 28%;
+    }
+
+    .sidebar {
+        padding: 1px;
+    }
+
+    .usuario i {
+        margin-right: 25px;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+
+    .usuario h3 {
+        display: none;
+    }
+
+    .naveg a {
+        margin-bottom: 5px;
+
+    }
+
+    .naveg h3 {
+        margin-top: 45px;
+        margin-bottom: 2px;
+        margin-left: 10px;
+    }
+
+    .naveg a:before {
+        width: 100%;
+    }
+
+    .naveg a i {
+        margin-right: 8px;
+    }
+}
+
 /* Estilos para telas menores que 800px de largura */
 
 /* ESTRUTURA PADRÃO DE TODAS AS PÁGINAS */
