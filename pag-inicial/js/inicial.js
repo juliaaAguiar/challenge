@@ -106,9 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Dados para a tabela
     var data = [
-        { nome: 'João', idade: 30, cidade: 'São Paulo' },
-        { nome: 'Maria', idade: 25, cidade: 'Rio de Janeiro' },
-        { nome: 'Carlos', idade: 35, cidade: 'Belo Horizonte' }
+        { nome: 'o', Tipo: 30, cidade: 'São Paulo' },
+        { nome: 'o', Tipo: 25, cidade: 'Rio de Janeiro' },
+        { nome: 'o', Tipo: 35, cidade: 'Belo Horizonte' }
     ];
 
     // Criação da tabela
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var headRow = document.createElement('tr');
     for (var key in data[0]) {
         var th = document.createElement('th');
-        th.textContent = key.charAt(0).toUpperCase() + key.slice(1); // Capitaliza o texto
+        th.textContent = key.charAt(0).toUpperCase() + key.slice(1); 
         headRow.appendChild(th);
     }
     thead.appendChild(headRow);
