@@ -151,14 +151,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     div.style.color = '#FFFFFF';
                     div.style.cursor = 'pointer';
                     div.addEventListener('click', function() {
-                        window.location.href = "../pag-alertas/pag-erro/erro.html";
+                        window.location.href = "../pag-erro/erro.html";
                     });
 
                 } else if (item[key] === 'Ausente') {
                     div.style.backgroundColor = '#F4DB00';
                     div.style.cursor = 'pointer';
                     div.addEventListener('click', function() {
-                        window.location.href = "../pag-alertas/pag-erro/erro2.html";
+                        window.location.href = "../pag-erro/erro2.html";
                     }); // Remova o parêntese extra aqui
                 }
 
