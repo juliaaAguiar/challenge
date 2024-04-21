@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<!-- /* ESTRUTURA PADRÃO DE TODAS AS PÁGINAS */ -->
+
     <header>
         <div class="infoheader">
             <div class="logo">
@@ -34,7 +34,7 @@
                 <div class="naveg">
                     <h3>Menu</h3>
                     <a href="../pag-inicial/inicial.html"><i class="fa-solid fa-house"></i>Inicial</a>
-                    <a href="#"><i class="fas fa-triangle-exclamation"></i>Alertas</a>
+                    <a href="../pag-alertas/alertas.html"><i class="fas fa-triangle-exclamation"></i>Alertas</a>
                     <a href="../pag-chamado/chamado.html"><i class="fas fa-table-list"></i>Chamados</a>
                     <a href="../pag-porticos/porticos.html"><i class="fas fa-object-group"></i>Pórticos</a>
                 </div>
@@ -43,8 +43,27 @@
         <div class="return">
             <a href="../pag-login/index.html"><i class="fa-solid fa-reply"></i></a>
         </div>
-    </section>
-<!-- /* ESTRUTURA PADRÃO DE TODAS AS PÁGINAS */ -->
+        <div class="container">
+            <div class="error-graph">
+                <canvas id="graph1" class="graph-animation" width="1250" height="300"></canvas>
+                    <canvas id="errorChart"></canvas>
+            </div>
+            <div class="error-text">
+                <p>Alta taxa de erros no serviço ,,,,,. <br> <br>
 
+                    Mais de 10 requests com erros nos últimos 10 minutos. <br>
+                    
+                    O serviço é responsável pela ...... <br>
+                    Acionar os SREs 24/7.</p>
+            </div>
+            <div class="status2">
+                <p>Ausente</p>
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+        </div>
+    </section>
+    <script src="erro.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </body>
+
 </html>

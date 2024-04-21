@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 label: 'Incidentes',
                 data: [{ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }, { x: 4, y: 4 }, { x: 5, y: 5 }],
                 backgroundColor: '#1186F6',
-                borderWidth: 1
+                borderColor: '#1186F6',
+                borderWidth: 1,
+                showLine: true,
 
             }]
         },

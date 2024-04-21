@@ -15,7 +15,6 @@
 </head>
 <body>
 
-<!-- /* ESTRUTURA PADRÃO DE TODAS AS PÁGINAS */ -->
     <header>
         <div class="infoheader">
             <div class="logo">
@@ -34,7 +33,7 @@
                 <div class="naveg">
                     <h3>Menu</h3>
                     <a href="../pag-inicial/inicial.html"><i class="fa-solid fa-house"></i>Inicial</a>
-                    <a href="#"><i class="fas fa-triangle-exclamation"></i>Alertas</a>
+                    <a href="../pag-alertas/alertas.html"><i class="fas fa-triangle-exclamation"></i>Alertas</a>
                     <a href="../pag-chamado/chamado.html"><i class="fas fa-table-list"></i>Chamados</a>
                     <a href="../pag-porticos/porticos.html"><i class="fas fa-object-group"></i>Pórticos</a>
                 </div>
@@ -44,22 +43,26 @@
             <a href="../pag-login/index.html"><i class="fa-solid fa-reply"></i></a>
         </div>
         <div class="container">
-            <h1>Tela de Erro - Equipamento Ausente</h1>
             <div class="error-graph">
-                <!-- Aqui vai o gráfico de erro -->
-                <canvas id="errorChart"></canvas>
+                <canvas id="graph1" class="graph-animation" width="1250" height="300"></canvas>
+                    <canvas id="errorChart"></canvas>
             </div>
             <div class="error-text">
-                <!-- Aqui vai o texto explicativo do erro -->
-                <p>O equipamento está ausente devido a um erro de conexão.</p>
+                <p>Alta taxa de erros no serviço ,,,,,. <br> <br>
+
+                    Mais de 10 requests com erros nos últimos 10 minutos. <br>
+                    
+                    O serviço é responsável pela ...... <br>
+                    Acionar os SREs 24/7.</p>
             </div>
-            <div class="status">
-                <!-- Retângulo de "ausente" -->
-                <div class="status-indicator" id="statusAusente"></div>
-                <p>Ausente</p>
+            <div class="status1">
+                <p>Offline</p>
+                <i class="fa-solid fa-triangle-exclamation"></i>
             </div>
         </div>
     </section>
-
+    <script src="erro.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </body>
+
 </html>
