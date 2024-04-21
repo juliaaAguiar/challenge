@@ -1,62 +1,13 @@
-.graph-container{
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    margin-top: 20px;
-    margin-left: 15%;
-}
-
-canvas{
-    transition: transform 0.3s ease;
-}
-
-canvas:hover{
-    transform: scale(1.1);
-}
-
-#graph1,
-#graph2,
-#graph3{
-    position: fixed;
-    border-radius: 5px;
-    border: 1px solid #585960;
-}
-
-#graph1{
-    bottom: 0;
-    right: 0;
-    margin-bottom: 20px;
-    margin-right: 40px;
-}
-
-#graph2{
-    top: 120px;
-    right: 0;
-    margin-right: 40px;
-}
-
-#graph3{
-    bottom: 0;
-    left: 0;
-    margin-bottom: 20px;
-    margin-left: 300px;
-}
-
-/* 3. Estilos da Tabela */
 #table-container{
     position: fixed;
     top: 120px;
     left: 300px;
-    width: 55%;
-    height: 40%;
+    width: 80%;
+    height: 80%;
     overflow: auto;
     border-radius: 5px;
     border: 1px solid #585960;
     transition: transform 0.3s ease;
-}
-
-#table-container:hover{
-    transform: scale(1.05);
 }
 
 tbody tr:hover{
@@ -90,6 +41,6 @@ table td{
     text-align: left;
 }
 
-table th{
+table th {
     background-color: #f2f2f2;
 }

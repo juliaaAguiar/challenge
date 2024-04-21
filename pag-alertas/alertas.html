@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="ligth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecsidel</title>
     <link rel="icon" href="assets/Logo2.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../pag-login/style.css">
+    <link rel="stylesheet" href="./alertas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -34,13 +38,17 @@
                     <a href="../pag-chamado/chamado.html"><i class="fas fa-table-list"></i>Chamados</a>
                     <a href="../pag-porticos/porticos.html"><i class="fas fa-object-group"></i>Pórticos</a>
                 </div>
+                <div class="return">
+                    <a href="../pag-login/index.html"><i class="fa-solid fa-reply"></i></a>
+                </div>
+                <div class="return">
+                    <a href="../pag-login/index.html"><i class="fa-solid fa-reply"></i></a>
+                </div>
             </div>
-        </div>
-        <div class="return">
-            <a href="../pag-login/index.html"><i class="fa-solid fa-reply"></i></a>
-        </div>
-    </section>
-<!-- /* ESTRUTURA PADRÃO DE TODAS AS PÁGINAS */ -->
-
-</body>
-</html>
+            <div id="table-container"></div>
+        </section>
+        <script src="alertas.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </body>
+    
+    </html>
