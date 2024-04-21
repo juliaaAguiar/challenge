@@ -26,15 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var thead = document.createElement('thead');
     var tbody = document.createElement('tbody');
 
-    // Primeiro cabeçalho da tabela
-    var firstHeadRow = document.createElement('tr');
-    var th = document.createElement('th');
-    th.textContent = 'Alertas mais recentes';
-    th.setAttribute('colspan', Object.keys(data[0]).length);
-    th.style.textAlign = 'center'; 
-    firstHeadRow.appendChild(th);
-    thead.appendChild(firstHeadRow);
-
     table.appendChild(thead);
 
     // Segundo cabeçalho da tabela
