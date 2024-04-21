@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Tamanho dos gráficos
-    var graphWidth = 300;
-    var graphHeight = 300;
-
     // Gráfico de dispersão
     var scatterCtx = document.getElementById('graph1').getContext('2d');
     var scatterChart = new Chart(scatterCtx, {
@@ -12,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 label: 'Incidentes',
                 data: [{ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }, { x: 4, y: 4 }, { x: 5, y: 5 }],
                 backgroundColor: '#1186F6',
-                borderColor: '#1186F6',
                 borderWidth: 1
 
             }]
@@ -20,8 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
         options: {
             responsive: false,
             maintainAspectRatio: false,
-            width: graphWidth,
-            height: graphHeight,
             scales: {
                 x: {
                     title: {
@@ -61,8 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         options: {
             responsive: false,
             maintainAspectRatio: false,
-            width: graphWidth,
-            height: graphHeight,
+            cutout: '70%', // Define a porcentagem de espessura da rosca
             scales: {
                 x: {
                     display: false,
@@ -94,8 +86,6 @@ document.addEventListener('DOMContentLoaded', function () {
         options: {
             responsive: false,
             maintainAspectRatio: false,
-            width: graphWidth,
-            height: graphHeight,
             scales: {
                 y: {
                     beginAtZero: true
@@ -104,11 +94,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Dados para a tabela
+    // Tabela
     var data = [
-        { nome: 'o', Tipo: 30, cidade: 'São Paulo' },
-        { nome: 'o', Tipo: 25, cidade: 'Rio de Janeiro' },
-        { nome: 'o', Tipo: 35, cidade: 'Belo Horizonte' }
+        { Status: 'Offline', Tipo: 30, cidade: 'São Paulo', novaColuna: 'Valor1', },
+        { Status: 'Ausente', Tipo: 25, cidade: 'Rio de Janeiro', novaColuna: 'Valor2', },
+        { Status: 'Offline', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor3', },
+        { Status: 'Offline', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor4', },
+        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor5', },
+        { Status: 'Offline', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor6', },
+        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', }
     ];
 
     // Criação da tabela
@@ -117,22 +111,64 @@ document.addEventListener('DOMContentLoaded', function () {
     var thead = document.createElement('thead');
     var tbody = document.createElement('tbody');
 
-    // Criação do cabeçalho da tabela
+    // Primeiro cabeçalho da tabela
+    var firstHeadRow = document.createElement('tr');
+    var th = document.createElement('th');
+    th.textContent = 'Alertas mais recentes';
+    th.setAttribute('colspan', Object.keys(data[0]).length);
+    th.style.textAlign = 'center'; 
+    firstHeadRow.appendChild(th);
+    thead.appendChild(firstHeadRow);
+
+    table.appendChild(thead);
+
+    // Segundo cabeçalho da tabela
     var headRow = document.createElement('tr');
     for (var key in data[0]) {
         var th = document.createElement('th');
-        th.textContent = key.charAt(0).toUpperCase() + key.slice(1); 
+        if (key === 'Status') {
+            th.textContent = 'Status';
+        } else {
+            th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+        }
         headRow.appendChild(th);
     }
     thead.appendChild(headRow);
-    table.appendChild(thead);
 
-    // Preenchimento da tabela com os dados
+    // Dados estilização
     data.forEach(function (item) {
         var row = document.createElement('tr');
         for (var key in item) {
             var cell = document.createElement('td');
-            cell.textContent = item[key];
+            if (key === 'Status') {
+                var div = document.createElement('div');
+                div.textContent = item[key];
+                div.style.height = '25px';
+
+                // Definindo a cor com base no valor da coluna "Status"
+                if (item[key] === 'Offline') {
+                    div.style.backgroundColor = '#F2383A';
+                    div.style.color = '#FFFFFF';
+                    div.style.cursor = 'pointer';
+                    div.addEventListener('click', function() {
+                        window.location.href = "../pag-alertas/pag-erro/erro.html";
+                    });
+
+                } else if (item[key] === 'Ausente') {
+                    div.style.backgroundColor = '#F4DB00';
+                    div.style.cursor = 'pointer';
+                    div.addEventListener('click', function() {
+                        window.location.href = "../pag-alertas/pag-erro/erro2.html";
+                    }); // Remova o parêntese extra aqui
+                }
+
+                div.style.borderRadius = '5px'
+                div.style.textAlign = 'center';
+                cell.appendChild(div);
+            } else {
+                cell.textContent = item[key];
+                cell.style.textAlign = 'center'; 
+            }
             row.appendChild(cell);
         }
         tbody.appendChild(row);
