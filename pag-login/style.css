@@ -176,6 +176,28 @@ header {
     margin-right: 10px;
 }
 
+.return{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    z-index: 9999; /* Certifique-se de que o ícone fique acima de outros elementos */
+}
+
+.return a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.return a i{
+    color: white; 
+    font-size: 25px; 
+}
+
 /* Estilos para telas menores que 800px de largura */
 @media screen and (max-width: 800px) {
     header {
