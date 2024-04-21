@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecsidel</title>
-    <link rel="icon" href="./assets/Logo2.png" type="image/png">
+    <link rel="icon" href="../pag-login/assets/Logo2.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../pag-login/style.css">
-    <link rel="stylesheet" href="./alertas.css">
+    <link rel="stylesheet" href="./erro.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -19,7 +19,7 @@
     <header>
         <div class="infoheader">
             <div class="logo">
-                <img src="./assets/Logo.png" alt="Logo da Tecsidel">
+                <img src="../pag-login/assets/Logo.png" alt="Logo da Tecsidel">
             </div>
         </div>
     </header>
@@ -43,8 +43,23 @@
         <div class="return">
             <a href="../pag-login/index.html"><i class="fa-solid fa-reply"></i></a>
         </div>
+        <div class="container">
+            <h1>Tela de Erro - Equipamento Ausente</h1>
+            <div class="error-graph">
+                <!-- Aqui vai o gráfico de erro -->
+                <canvas id="errorChart"></canvas>
+            </div>
+            <div class="error-text">
+                <!-- Aqui vai o texto explicativo do erro -->
+                <p>O equipamento está ausente devido a um erro de conexão.</p>
+            </div>
+            <div class="status">
+                <!-- Retângulo de "ausente" -->
+                <div class="status-indicator" id="statusAusente"></div>
+                <p>Ausente</p>
+            </div>
+        </div>
     </section>
-<!-- /* ESTRUTURA PADRÃO DE TODAS AS PÁGINAS */ -->
 
 </body>
 </html>
