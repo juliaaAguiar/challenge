@@ -1,90 +1,75 @@
-.graph-container{
-    position: relative;
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Arial", sans-serif;
+    font-size: 32px;
+    color: #333; /* Cor do texto */
+    background-color: #f2f2f2; /* Cor de fundo */
+    border-radius: 10px; /* Borda arredondada */
+    border: 1px solid #ccc; /* Cor da borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.graph-container {
     display: flex;
-    align-items: flex-start;
-    margin-top: 20px;
-    margin-left: 15%;
-}
-
-canvas{
-    transition: transform 0.3s ease;
-}
-
-canvas:hover{
-    transform: scale(1.1);
+    justify-content: center; 
+    align-items: flex-end;
+    margin-top: 10px;
+    margin-left: 16%;
 }
 
 #graph1,
 #graph2,
-#graph3{
-    position: fixed;
-    border-radius: 5px;
+#graph3 {
+    border-radius: 10px;
     border: 1px solid #585960;
+    max-height: 300px;
+    overflow: auto; 
+    margin: 10px;
 }
 
-#graph1{
-    bottom: 0;
-    right: 0;
-    margin-bottom: 20px;
-    margin-right: 40px;
-}
-
-#graph2{
-    top: 120px;
-    right: 0;
-    margin-right: 40px;
-}
-
-#graph3{
-    bottom: 0;
-    left: 0;
-    margin-bottom: 20px;
-    margin-left: 300px;
-}
-
-/* 3. Estilos da Tabela */
-#table-container{
-    position: fixed;
-    top: 120px;
-    left: 300px;
-    width: 55%;
+#table-container {
+    width: 54%; 
     height: 40%;
     overflow: auto;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #585960;
     transition: transform 0.3s ease;
+    max-height: 300px;
+    margin-left: 17%;  
 }
 
-#table-container:hover{
-    transform: scale(1.05);
+#table-container:hover {
+    transform: scale(1.02);
 }
 
-tbody tr:hover{
+tbody tr:hover {
     background-color: #edebeb;
     transition: background-color 0.3s ease;
 }
 
-#table-container::-webkit-scrollbar{
+#table-container::-webkit-scrollbar {
     width: 10px;
 }
 
-#table-container::-webkit-scrollbar-thumb{
+#table-container::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 5px;
 }
 
-#table-container::-webkit-scrollbar-track{
+#table-container::-webkit-scrollbar-track {
     background-color: #f1f1f1;
 }
 
-table{
+table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
 table th,
-table td{
+table td {
     padding: 8px;
     border: 1px solid #ddd;
     text-align: left;
@@ -93,3 +78,4 @@ table td{
 table th {
     background-color: #f2f2f2;
 }
+

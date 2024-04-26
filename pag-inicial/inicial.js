@@ -1,37 +1,48 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Gráfico de dispersão
-    var scatterCtx = document.getElementById('graph1').getContext('2d');
-    var scatterChart = new Chart(scatterCtx, {
-        type: 'scatter',
-        data: {
-            datasets: [{
-                label: 'Incidentes',
-                data: [{ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }, { x: 4, y: 4 }, { x: 5, y: 5 }],
-                backgroundColor: '#1186F6',
-                borderColor: '#1186F6',
-                borderWidth: 1,
-                showLine: true,
+    // Dados atualizados para o gráfico de dispersão
+    var newData = {
+        datasets: [{
+            label: 'Novos Incidentes',
+            data: [{ x: 1, y: 1 }, { x: 2, y: 3 }, { x: 3, y: 2 }, { x: 4, y: 4 }, { x: 5, y: 5 }],
+            backgroundColor: '#FF5733',
+            borderColor: '#FF5733',
+            borderWidth: 1,
+            showLine: true
+        }]
+    };
 
-            }]
-        },
-        options: {
-            responsive: false,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Eixo X'
-                    }
+    // Opções para o gráfico de dispersão atualizado
+    var scatterOptions = {
+        responsive: false,
+        maintainAspectRatio: false,
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Eixo X'
                 },
-                y: {
-                    title: {
-                        display: true,
-                        text: 'Eixo Y'
-                    }
+                grid: {
+                    display: false // Remover linhas de grade do eixo X
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Eixo Y'
+                },
+                grid: {
+                    display: false // Remover linhas de grade do eixo Y
                 }
             }
         }
+    };
+
+    // Atualizar o gráfico de dispersão
+    var scatterCtx = document.getElementById('graph1').getContext('2d');
+    var scatterChart = new Chart(scatterCtx, {
+        type: 'scatter',
+        data: newData,
+        options: scatterOptions
     });
 
     // Gráfico de rosca
@@ -69,6 +80,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Gráfico de barra
+    var barOptions = {
+        responsive: false,
+        maintainAspectRatio: false,
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Eixo X'
+                },
+                grid: {
+                    display: false // Remover linhas de grade do eixo X
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Eixo Y'
+                },
+                grid: {
+                    display: false // Remover linhas de grade do eixo Y
+                },
+                beginAtZero: true
+            }
+        }
+    };
+
     var barCtx = document.getElementById('graph3').getContext('2d');
     var barChart = new Chart(barCtx, {
         type: 'bar',
@@ -85,26 +122,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 borderWidth: 1
             }]
         },
-        options: {
-            responsive: false,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
+        options: barOptions
     });
 
     // Tabela
     var data = [
-        { Status: 'Offline', Tipo: 30, cidade: 'São Paulo', novaColuna: 'Valor1', },
-        { Status: 'Ausente', Tipo: 25, cidade: 'Rio de Janeiro', novaColuna: 'Valor2', },
-        { Status: 'Offline', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor3', },
-        { Status: 'Offline', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor4', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor5', },
-        { Status: 'Offline', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor6', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', }
+        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor1', Status: 'Erro' },
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
+        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
+        { Identificação: 'CAM00189 ', Categoria: 'Equipamento', novaColuna: 'Valor5', Status: 'Atenção' },
+        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor6', Status: 'Erro' },
     ];
 
     // Criação da tabela
@@ -116,9 +144,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Primeiro cabeçalho da tabela
     var firstHeadRow = document.createElement('tr');
     var th = document.createElement('th');
-    th.textContent = 'Alertas mais recentes';
+    th.textContent = 'Alertas recentes';
     th.setAttribute('colspan', Object.keys(data[0]).length);
-    th.style.textAlign = 'center'; 
+    th.style.textAlign = 'center';
     firstHeadRow.appendChild(th);
     thead.appendChild(firstHeadRow);
 
@@ -133,11 +161,12 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
         }
+        th.style.textAlign = 'center';
         headRow.appendChild(th);
     }
     thead.appendChild(headRow);
 
-    // Dados estilização
+    // Dados estilizados
     data.forEach(function (item) {
         var row = document.createElement('tr');
         for (var key in item) {
@@ -148,20 +177,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 div.style.height = '25px';
 
                 // Definindo a cor com base no valor da coluna "Status"
-                if (item[key] === 'Offline') {
+                if (item[key] === 'Erro') {
                     div.style.backgroundColor = '#F2383A';
                     div.style.color = '#FFFFFF';
                     div.style.cursor = 'pointer';
-                    div.addEventListener('click', function() {
+                    div.addEventListener('click', function () {
                         window.location.href = "../pag-erro/erro.html";
                     });
 
-                } else if (item[key] === 'Ausente') {
+                } else if (item[key] === 'Atenção') {
                     div.style.backgroundColor = '#F4DB00';
                     div.style.cursor = 'pointer';
-                    div.addEventListener('click', function() {
+                    div.addEventListener('click', function () {
                         window.location.href = "../pag-erro/erro2.html";
-                    }); // Remova o parêntese extra aqui
+                    });
                 }
 
                 div.style.borderRadius = '5px'
@@ -169,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cell.appendChild(div);
             } else {
                 cell.textContent = item[key];
-                cell.style.textAlign = 'center'; 
+                cell.style.textAlign = 'center';
             }
             row.appendChild(cell);
         }

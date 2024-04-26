@@ -1,6 +1,7 @@
 body {
     overflow: hidden;
 }
+
 #graph1{
     position: fixed;
     border-radius: 5px;
