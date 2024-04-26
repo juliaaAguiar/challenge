@@ -131,8 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
         { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
         { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
         { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
-        { Identificação: 'CAM00189 ', Categoria: 'Equipamento', novaColuna: 'Valor5', Status: 'Atenção' },
-        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor6', Status: 'Erro' },
     ];
 
     // Criação da tabela
@@ -208,4 +206,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Adiciona a tabela ao container
     tableContainer.appendChild(table);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const panel = document.getElementById('panel');
+
+    // Dados dos indicadores
+    const indicatorsData = [
+        { label: 'Incidentes', value: '10.000' },
+        { label: 'Fluxo', value: 'R$ 10%' },
+        { label: 'Congestionamento', value: '100' },
+        { label: 'Taxa de Erros', value: '25%' }
+    ];
+
+    // Criar indicadores
+    indicatorsData.forEach(data => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+
+        const title = document.createElement('h2');
+        title.textContent = data.label;
+        indicator.appendChild(title);
+
+        const value = document.createElement('p');
+        value.textContent = data.value;
+        indicator.appendChild(value);
+
+        panel.appendChild(indicator);
+    });
 });

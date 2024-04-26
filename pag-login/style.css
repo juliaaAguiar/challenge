@@ -101,7 +101,7 @@ body {
 header {
     background-color: #fafafa;
     padding: 20px 2%;
-    margin-left: 15%;
+    margin-left: 13%;
     border-bottom: 1px solid #ccc;
 }
 
@@ -109,7 +109,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 15%;
+    width: 13%;
     height: 100vh;
     background: linear-gradient(180deg, rgba(1, 83, 160, 0.00) 0%, #00519E 63.07%), linear-gradient(180deg, #1189FA 0%, #1189FA 0.01%, #0A71D3 45.7%);
 }

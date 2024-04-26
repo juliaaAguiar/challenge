@@ -1,47 +1,88 @@
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+/* Estilo do botão de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 6px; 
+}
+
+/* Estilo da trilha da barra de rolagem */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
     font-family: "Arial", sans-serif;
     font-size: 32px;
-    color: #333; /* Cor do texto */
-    background-color: #f2f2f2; /* Cor de fundo */
-    border-radius: 10px; /* Borda arredondada */
-    border: 1px solid #ccc; /* Cor da borda */
-    padding: 10px 20px; /* Espaçamento interno */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    color: #333; 
+    background-color: #f2f2f2; 
+    border-radius: 10px; 
+    border: 1px solid #ccc; 
+    padding: 10px 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-.graph-container {
-    display: flex;
-    justify-content: center; 
-    align-items: flex-end;
-    margin-top: 10px;
+/* Indicador */
+.painel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
     margin-left: 16%;
+    padding-bottom: 20px;
 }
 
-#graph1,
-#graph2,
-#graph3 {
+.indicator {
+    background-color: #f0f0f0;
     border-radius: 10px;
-    border: 1px solid #585960;
-    max-height: 300px;
-    overflow: auto; 
-    margin: 10px;
+    padding: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 60px; 
+    width: 80%; 
+    margin-right: -5px; 
 }
 
+.indicator:hover {
+    transform: translateY(-3px); 
+}
+
+.indicator h2 {
+    margin-top: 0;
+    font-size: 16px; 
+    text-align: center;
+}
+
+.indicator p {
+    margin: 10px;
+    font-size: 18px; 
+    text-align: center;
+}
+
+.indicator:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #e0e0e0; 
+}
+/* Indicador */
+
+/* Tabela */
 #table-container {
-    width: 54%; 
+    background-color: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 83%; 
     height: 40%;
     overflow: auto;
     border-radius: 10px;
-    border: 1px solid #585960;
     transition: transform 0.3s ease;
     max-height: 300px;
-    margin-left: 17%;  
+    margin-left: 15%;  
 }
 
 #table-container:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 tbody tr:hover {
@@ -78,4 +119,52 @@ table td {
 table th {
     background-color: #f2f2f2;
 }
+/* Tabela */
 
+/* Gráficos */
+.graph-container {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end;
+    margin-top: 10px;
+    margin-left: 13%;
+}
+
+#graph1,
+#graph2,
+#graph3 {
+    background-color: #fafafa ;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    max-height: 300px;
+    overflow: auto; 
+    margin: 10px;
+}
+
+#graph1 {
+    transition: background-color 3s ease, transform 0.3s ease; 
+}
+
+#graph1:hover {
+    background-color: #edebeb;
+    transform: scale(1.02);
+}
+
+#graph2 {
+    transition: background-color 3s ease, transform 0.3s ease; 
+}
+
+#graph2:hover {
+    background-color: #edebeb;
+    transform: scale(1.02);
+}
+
+#graph3 {
+    transition: background-color 3s ease, transform 0.3s ease; 
+}
+
+#graph3:hover {
+    background-color: #edebeb;
+    transform: scale(1.02);
+}
+/* Gráficos */
