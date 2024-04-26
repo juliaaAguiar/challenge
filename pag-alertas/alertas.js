@@ -1,23 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Tabela
     var data = [
-        { Status: 'Offline', Tipo: 30, cidade: 'São Paulo', novaColuna: 'Valor1', },
-        { Status: 'Ausente', Tipo: 25, cidade: 'Rio de Janeiro', novaColuna: 'Valor2', },
-        { Status: 'Offline', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor3', },
-        { Status: 'Offline', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor4', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor5', },
-        { Status: 'Offline', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor6', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
-        { Status: 'Ausente', Tipo: 35, cidade: 'Belo Horizonte', novaColuna: 'Valor7', },
+        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor1', Status: 'Erro' },
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
+        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor1', Status: 'Erro' },
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
+        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor1', Status: 'Erro' },
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
+        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        
     ];
 
     // Criação da tabela
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     table.appendChild(thead);
 
-    // Segundo cabeçalho da tabela
+    // Cabeçalho da tabela
     var headRow = document.createElement('tr');
     for (var key in data[0]) {
         var th = document.createElement('th');
@@ -38,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
         }
         headRow.appendChild(th);
+        th.style.textAlign = 'center';
     }
     thead.appendChild(headRow);
 
@@ -52,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 div.style.height = '25px';
 
                 // Definindo a cor com base no valor da coluna "Status"
-                if (item[key] === 'Offline') {
+                if (item[key] === 'Erro') {
                     div.style.backgroundColor = '#F2383A';
                     div.style.color = '#FFFFFF';
                     div.style.cursor = 'pointer';
@@ -60,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         window.location.href = "../pag-erro/erro.html";
                     });
 
-                } else if (item[key] === 'Ausente') {
+                } else if (item[key] === 'Atenção') {
                     div.style.backgroundColor = '#F4DB00';
                     div.style.cursor = 'pointer';
                     div.addEventListener('click', function() {
