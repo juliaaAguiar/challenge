@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Atualizar o gráfico de dispersão
     var scatterCtx = document.getElementById('graph1').getContext('2d');
     var scatterChart = new Chart(scatterCtx, {
         type: 'scatter',

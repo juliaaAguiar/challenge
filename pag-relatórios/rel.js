@@ -1,89 +1,26 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Tabela
-    var data = [
-        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor1', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
-        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor1', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
-        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor1', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
-        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        
-    ];
+document.addEventListener('DOMContentLoaded', function() {
+    // Dados do gráfico de rosca
+    var data = {
+        labels: ['Caminhão', 'Carro', 'Moto', 'Ônibus', 'Diversos'],
+        datasets: [{
+            label: 'Distribuição de Veículos',
+            data: [10, 20, 30, 40, 50],
+            backgroundColor: ['#C7CEFF', '#1186F6', '#035AAC', '#37375C', '#00519E'],
+            borderWidth: 1
+        }]
+    };
 
-    // Criação da tabela
-    var tableContainer = document.getElementById('table-container');
-    var table = document.createElement('table');
-    var thead = document.createElement('thead');
-    var tbody = document.createElement('tbody');
+    // Opções do gráfico de rosca
+    var options = {
+        responsive: true,
+        maintainAspectRatio: false
+    };
 
-    table.appendChild(thead);
-
-    // Cabeçalho da tabela
-    var headRow = document.createElement('tr');
-    for (var key in data[0]) {
-        var th = document.createElement('th');
-        if (key === 'Status') {
-            th.textContent = 'Status';
-        } else {
-            th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
-        }
-        headRow.appendChild(th);
-        th.style.textAlign = 'center';
-    }
-    thead.appendChild(headRow);
-
-    // Dados estilização
-    data.forEach(function (item) {
-        var row = document.createElement('tr');
-        for (var key in item) {
-            var cell = document.createElement('td');
-            if (key === 'Status') {
-                var div = document.createElement('div');
-                div.textContent = item[key];
-                div.style.height = '25px';
-
-                // Definindo a cor com base no valor da coluna "Status"
-                if (item[key] === 'Erro') {
-                    div.style.backgroundColor = '#F2383A';
-                    div.style.color = '#FFFFFF';
-                    div.style.cursor = 'pointer';
-                    div.addEventListener('click', function() {
-                        window.location.href = "../pag-erro/erro.html";
-                    });
-
-                } else if (item[key] === 'Atenção') {
-                    div.style.backgroundColor = '#F4DB00';
-                    div.style.cursor = 'pointer';
-                    div.addEventListener('click', function() {
-                        window.location.href = "../pag-erro/erro2.html";
-                    }); // Remova o parêntese extra aqui
-                }
-
-                div.style.borderRadius = '5px'
-                div.style.textAlign = 'center';
-                cell.appendChild(div);
-            } else {
-                cell.textContent = item[key];
-                cell.style.textAlign = 'center'; 
-            }
-            row.appendChild(cell);
-        }
-        tbody.appendChild(row);
+    // Preencher os detalhes do gráfico
+    var chartDetails = document.getElementById('chart-details');
+    data.labels.forEach(function(label, index) {
+        var detail = document.createElement('div');
+        detail.innerHTML = `<strong>${label}:</strong> ${data.datasets[0].data[index]}%`;
+        chartDetails.appendChild(detail);
     });
-    table.appendChild(tbody);
-
-    // Adiciona a tabela ao container
-    tableContainer.appendChild(table);
 });

@@ -1,62 +1,65 @@
-/* Estilo da barra de rolagem */
-::-webkit-scrollbar {
-    width: 12px; 
+/* Reset de margens e padding */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
 }
 
-/* Estilo do botão de rolagem */
-::-webkit-scrollbar-thumb {
-    background-color: #888; 
-    border-radius: 6px; 
+/* Estilo do cabeçalho */
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
 }
 
-/* Estilo da trilha da barra de rolagem */
-::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
+.logo img {
+    max-width: 200px;
 }
 
+/* Estilo do título principal */
 h1 {
     text-align: center;
-    margin-bottom: 20px;
-    font-family: "Arial", sans-serif;
-    font-size: 32px;
-    color: #333; 
-    background-color: #f2f2f2; 
-    border-radius: 10px; 
-    border: 1px solid #ccc; 
-    padding: 10px 20px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    margin: 20px 0;
 }
 
-#table-container {
-    position: relative; 
-    top: 25%;
-    left: 15%;
-    width: 83%;
-    overflow: auto; 
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+/* Estilo do contêiner principal */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
 }
 
-tbody tr:hover{
-    background-color: #edebeb;
-    transition: background-color 0.3s ease;
+/* Estilo da seção do gráfico */
+.chart-section {
+    margin-right: 20px;
 }
 
-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+/* Estilo da seção de detalhes */
+.details-section {
+    flex-grow: 1;
 }
 
-table th,
-table td{
-    padding: 8px;
+/* Estilo do canvas do gráfico */
+canvas {
     border: 1px solid #ddd;
-    text-align: left;
+    border-radius: 5px;
+    width: 400px;
+    height: 400px;
 }
 
-table th {
+/* Estilo do rodapé */
+footer {
     background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 20px;
+}
+
+footer a:last-child {
+    margin-right: 0;
 }
