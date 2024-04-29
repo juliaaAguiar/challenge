@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const panel = document.getElementById('panel');
+    const painel = document.getElementById('painel');
 
     // Dados dos indicadores
     const indicatorsData = [
@@ -231,6 +231,6 @@ document.addEventListener('DOMContentLoaded', function () {
         value.textContent = data.value;
         indicator.appendChild(value);
 
-        panel.appendChild(indicator);
+        painel.appendChild(indicator);
     });
 });

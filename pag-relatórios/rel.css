@@ -1,21 +1,3 @@
-/* Reset de margens e padding */
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilo do cabeçalho */
-header {
-    background-color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
-}
-
-.logo img {
-    max-width: 200px;
-}
-
-/* Estilo do título principal */
 h1 {
     text-align: center;
     margin: 20px 0;
@@ -34,9 +16,31 @@ main {
     margin-right: 20px;
 }
 
-/* Estilo da seção de detalhes */
-.details-section {
-    flex-grow: 1;
+/* Estilo da seção de controles */
+.controls-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo dos botões de seleção */
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.vehicle-button {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #00519E;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.vehicle-button:hover {
+    background-color: #1186F6;
 }
 
 /* Estilo do canvas do gráfico */
@@ -45,21 +49,4 @@ canvas {
     border-radius: 5px;
     width: 400px;
     height: 400px;
-}
-
-/* Estilo do rodapé */
-footer {
-    background-color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
-}
-
-footer a {
-    text-decoration: none;
-    color: #333;
-    margin-right: 20px;
-}
-
-footer a:last-child {
-    margin-right: 0;
 }
