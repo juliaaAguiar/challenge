@@ -1,0 +1,62 @@
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+/* Estilo do botão de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 6px; 
+}
+
+/* Estilo da trilha da barra de rolagem */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Arial", sans-serif;
+    font-size: 32px;
+    color: #333; 
+    background-color: #f2f2f2; 
+    border-radius: 10px; 
+    border: 1px solid #ccc; 
+    padding: 10px 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+#table-container {
+    position: relative; 
+    top: 25%;
+    left: 15%;
+    width: 83%;
+    overflow: auto; 
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+tbody tr:hover{
+    background-color: #edebeb;
+    transition: background-color 0.3s ease;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td{
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
