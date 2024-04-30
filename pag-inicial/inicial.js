@@ -1,17 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Dados atualizados para o gráfico de dispersão
+    // Dados para o gráfico de dispersão
     var newData = {
         datasets: [{
-            label: 'Novos Incidentes',
-            data: [{ x: 1, y: 1 }, { x: 2, y: 3 }, { x: 3, y: 2 }, { x: 4, y: 4 }, { x: 5, y: 5 }],
-            backgroundColor: '#FF5733',
-            borderColor: '#FF5733',
+            label: 'Status Equipamento',
+            data: [{ x: 1, y: 9 }, { x: 2, y: 8 }, { x: 3, y: 4 }, { x: 4, y: 8 }, { x: 5, y  : 8 }],
+            backgroundColor: '#1186F6',
+            borderColor: '#035AAC',
             borderWidth: 1,
             showLine: true
         }]
+        
     };
 
-    // Opções para o gráfico de dispersão atualizado
+    // Opções para o gráfico de dispersão
     var scatterOptions = {
         responsive: false,
         maintainAspectRatio: false,
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             x: {
                 title: {
                     display: true,
-                    text: 'Eixo X'
+                    text: ''
                 },
                 grid: {
                     display: false // Remover linhas de grade do eixo X
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             y: {
                 title: {
                     display: true,
-                    text: 'Eixo Y'
+                    text: 'Funcionamento'
                 },
                 grid: {
                     display: false // Remover linhas de grade do eixo Y
@@ -213,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Dados dos indicadores
     const indicatorsData = [
         { label: 'Incidentes', value: '10.000' },
-        { label: 'Fluxo', value: 'R$ 10%' },
+        { label: 'Fluxo', value: '10%' },
         { label: 'Congestionamento', value: '100' },
         { label: 'Taxa de Erros', value: '25%' }
     ];

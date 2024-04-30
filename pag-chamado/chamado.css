@@ -34,7 +34,7 @@ textarea {
 }
 
 .form-group {
-    margin-bottom: 20px; /* Adiciona margem na parte inferior de cada grupo de formulário */
+    margin-bottom: 20px;
 }
 
 textarea {
@@ -43,8 +43,8 @@ textarea {
 
 button {
     position: absolute;
-    bottom: 10px; /* Distância do botão em relação à parte inferior */
-    left: 70%; /* Distância do botão em relação à direita */
+    bottom: 10px; 
+    left: 70%; 
     width: 25%;
     padding: 15px;
     background-color: #007bff;
