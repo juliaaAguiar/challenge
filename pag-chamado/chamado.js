@@ -1,3 +1,5 @@
+import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js'
+
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('chamado-form');
 
@@ -9,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const problema = document.getElementById('problema').value;
 
         enviarChamado(idAlerta, equipe, problema);
+        salvarChamado(equipe, problema);
     });
 
     function enviarChamado(idAlerta, equipe, problema) {
@@ -20,5 +23,23 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Chamado enviado com sucesso! Entraremos em contato.');
 
         form.reset();
+    }
+
+    function salvarChamado(equipe, problema) {
+        var codigo = nanoid();
+        var tipo = document.getElementById("identificacao").value;
+        var transaction = db.transaction(["chamados"], "readwrite");
+        var objectStore = transaction.objectStore("chamados");
+        var request = objectStore.add({ codigo: codigo, descricao: problema, equipe: equipe, tipo: tipo, status: 'ativo' });
+
+        request.onsuccess = function(event) {
+            console.log("Chamado salvo com sucesso.");
+            form.reset();
+            exibirChamados();
+        };
+
+        request.onerror = function(event) {
+            console.log("Erro ao salvar o chamado.");
+        };
     }
 });
