@@ -1,22 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chamados</title>
   <script src="./chamados.js"></script>
+  <link rel="stylesheet" href="chamados.css">
+  <link rel="icon" href="../pag-login/assets/Logo2.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../pag-login/style.css">
+    <link rel="stylesheet" href="./chamado.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-  <table>
+  <header>
+    <div class="infoheader">
+      <div class="logo">
+        <img src="../pag-login/assets/Logo.png" alt="Logo da Tecsidel">
+      </div>
+    </div>
+  </header>
+
+  <section class="content">
+    <div class="menu">
+      <div class="sidebar">
+        <div class="naveg">
+          <h3>Menu</h3>
+          <a href="../pag-inicial/inicial.html"><i class="fa-solid fa-house"></i>Inicial</a>
+          <a href="../pag-alertas/alertas.html"><i class="fas fa-triangle-exclamation"></i>Alertas</a>
+          <a href="../pag-chamados/chamados.html"><i class="fas fa-table-list"></i>Chamados</a>
+          <a href="../pag-porticos/porticos.html"><i class="fas fa-object-group"></i>Pórticos</a>
+        </div>
+        <div class="return">
+          <a href="../pag-chamado/chamado.html"><i class="fa-solid fa-reply"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="return">
+      <a href="../pag-inicial/inicial.html"><i class="fa-solid fa-reply"></i></a>
+    </div>
+  </section>
+  <table id="task-content">
     <thead>
       <th>Código</th>
       <th>Descrição</th>
-      <th>Tipo</th>
+      <th>Equipe</th>
       <th>Status</th>
     </thead>
     <tbody id="chamados">
-      
+
     </tbody>
   </table>
 </body>
+
 </html>
