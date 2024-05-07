@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    var parametros = new URLSearchParams(window.location.search);
+    var alerta = parametros.get("alerta");
+
     const form = document.getElementById('chamado-form');
+    const idAlerta = document.getElementById('id-alerta');
+    if (alerta != null || alerta !== '') idAlerta.value = alerta; 
     let ultimoId = localStorage.getItem('codigoChamado') ?? 0;
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const idAlerta = document.getElementById('id-alerta').value;
         const equipe = document.getElementById('equipe').value;
         const problema = document.getElementById('problema').value;
 

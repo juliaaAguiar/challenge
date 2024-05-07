@@ -127,10 +127,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tabela
     var data = [
-        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor1', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
-        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
+        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', Data: '05/05/2024', Status: 'Erro', Id: 1},
+        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', Data: '04/05/2024', Status: 'Atenção', Id: 2},
+        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', Data: '03/05/2024', Status: 'Erro', Id: 3},
+        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', Data: '02/01/2024', Status: 'Erro', Id: 4},
     ];
 
     // Criação da tabela
@@ -156,6 +156,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var th = document.createElement('th');
         if (key === 'Status') {
             th.textContent = 'Status';
+        } else if (key === 'Id') {
+            th.textContent = '';
         } else {
             th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
         }
@@ -169,7 +171,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var row = document.createElement('tr');
         for (var key in item) {
             var cell = document.createElement('td');
-            if (key === 'Status') {
+            if (key === 'Status') 
+            {
                 var div = document.createElement('div');
                 div.textContent = item[key];
                 div.style.height = '25px';
@@ -194,7 +197,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 div.style.borderRadius = '5px'
                 div.style.textAlign = 'center';
                 cell.appendChild(div);
-            } else {
+            } else if (key === 'Id') 
+            {
+                var button = document.createElement('button');
+                button.setAttribute('id', `problema-${item[key]}`);
+                button.textContent = 'Ação';
+                button.value = item[key];
+                button.style.cursor = 'pointer';
+                button.style.borderRadius = '5px';
+                cell.appendChild(button);
+                cell.style.textAlign = 'center';
+            } 
+            else 
+            {
                 cell.textContent = item[key];
                 cell.style.textAlign = 'center';
             }
@@ -206,6 +221,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Adiciona a tabela ao container
     tableContainer.appendChild(table);
+
+    data.forEach(item => {
+        document.getElementById(`problema-${item.Id}`).addEventListener("click", function() {
+            var valor = document.getElementById(`problema-${item.Id}`).value;
+                navigator.clipboard.writeText(valor)
+                    .then(function() {
+                        window.location.href = "../pag-chamado/chamado.html?alerta=" + valor;
+                    })
+                    .catch(function(error) {
+                        console.error("Erro ao copiar: ", error);
+                    });
+        });
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
