@@ -150,21 +150,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     table.appendChild(thead);
 
-    // Segundo cabeçalho da tabela
-    var headRow = document.createElement('tr');
-    for (var key in data[0]) {
-        var th = document.createElement('th');
-        if (key === 'Status') {
-            th.textContent = 'Status';
-        } else if (key === 'Id') {
-            th.textContent = '';
-        } else {
-            th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
-        }
-        th.style.textAlign = 'center';
-        headRow.appendChild(th);
+// Segundo cabeçalho da tabela
+var headRow = document.createElement('tr');
+for (var key in data[0]) {
+    var th = document.createElement('th');
+    if (key === 'Status') {
+        th.textContent = 'Status';
+    } else if (key === 'Id') {
+        th.textContent = 'Ação'; // Renomeando a última coluna
+    } else {
+        th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
     }
-    thead.appendChild(headRow);
+    th.style.textAlign = 'center';
+    headRow.appendChild(th);
+}
+thead.appendChild(headRow);
+
 
     // Dados estilizados
     data.forEach(function (item) {
@@ -199,14 +200,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 cell.appendChild(div);
             } else if (key === 'Id') 
             {
-                var button = document.createElement('button');
-                button.setAttribute('id', `problema-${item[key]}`);
-                button.textContent = 'Ação';
-                button.value = item[key];
-                button.style.cursor = 'pointer';
-                button.style.borderRadius = '5px';
-                cell.appendChild(button);
-                cell.style.textAlign = 'center';
+            var button = document.createElement('button');
+            button.setAttribute('id', `problema-${item[key]}`);
+            button.textContent = 'Abrir Chamado';
+            button.value = item[key];
+            button.style.cursor = 'pointer';
+            button.style.borderRadius = '5px';
+            button.style.padding = '5px 10px'; 
+            button.style.border = 'none'; 
+            cell.appendChild(button);
+            cell.style.textAlign = 'center';
             } 
             else 
             {

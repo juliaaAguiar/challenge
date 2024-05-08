@@ -26,6 +26,68 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
+/* Estilos para o contêiner dos filtros */
+.filters {
+    margin-bottom: 20px;
+    margin-left: 15%;
+}
+
+.filters label {
+    margin-right: 10px; /* Espaçamento direito entre as labels e os elementos */
+}
+
+/* Estilos para o select de categoria */
+#category-filter {
+    padding: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* Estilos para o input de data */
+#date-filter {
+    padding: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* Estilos para o input de pesquisa */
+#search-input {
+    padding: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    width: 200px; 
+    margin-right: 10px;
+}
+
+/* Estilos para o input de pesquisa quando estiver em foco */
+#search-input:focus {
+    border-color: #66afe9; 
+    outline: none; 
+}
+
+/* Estilos para os botões */
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+    background-color: #008CBA
+}
+
+#search-button:hover, #clear-button:hover, #export-csv:hover {
+    background-color: #0073ba; 
+}
+
+#export-csv {
+    margin-left: 23%;
+}
+
 #table-container {
     position: relative; 
     top: 25%;
