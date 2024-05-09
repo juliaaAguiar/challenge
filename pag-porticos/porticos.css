@@ -1,17 +1,18 @@
 /* Estilo da barra de rolagem */
 ::-webkit-scrollbar {
-    width: 12px; 
+    width: 8px; /* Largura da barra de rolagem */
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #888; 
-    border-radius: 6px; 
+    background-color: rgba(0, 0, 0, 0.2); /* Cor da barra de rolagem */
+    border-radius: 6px; /* Raio da borda da barra de rolagem */
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
+    background-color: transparent; /* Cor de fundo da barra de rolagem */
 }
 /* Estilo da barra de rolagem */
+
 
 h1 {
     text-align: center;
@@ -67,80 +68,47 @@ h1 {
     background-color: #ccc;
 }
 
-
-body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #7c89d3;
-  }
-  .container{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-  }
-  svg{
-    width: 30%;
-  }
-  .norte {
-    fill: #63ab3f;
-  }
-  .nordeste {
-    fill: #f0b541;
-  }
-  .centro-oeste {
-    fill: #ffae70;
-  }
-  .sudeste {
-    fill: #4fa4b8;
-  }
-  .sul {
-    fill: #686f99;
-  }
-  path {
-    fill: #1da1f2;
-    stroke: white;
-    stroke-width: 1px;
-  }
-  path:hover {
-    fill: purple;
-    stroke: red;
-    stroke-width: 3px;
-    transition: fill 0.4s;
-  }
-  .tooltip {
-    pointer-events: none;
+.circular-map {
     position: absolute;
-    font-size: 18px;
-    text-align: center;
-    background: white;
-    padding: 10px 15px;
-    z-index: 5;
-    height: 30px;
-    line-height: 30px;
-    margin: 0 auto;
-    color: #21669e;
-    border-radius: 5px;
-    transform: translateX(-50%);
-    display: none;
-  }
-  .tooltip.active {
-    display: block;
+    width: 500px; /* Defina a largura desejada */
+    height: 500px; /* Defina a altura desejada */
+    border-radius: 50%; /* Torna o mapa circular */
+    overflow: hidden; /* Garante que o conteúdo dentro do círculo não ultrapasse os limites */
+    left: 65%;
+    margin-top: 3%;
 }
-.tooltip:after {
- ]~]zc;
- czczcontent: "";
+
+#table-container {
     position: absolute;
-    left: 50%;
-    top: 100%;
-    width: 0;
-    height: 0;
-    margin-left: -10px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid white;
+    top: 25%;
+    left: 15%;
+    width: 25%;
+    max-height: 50%; /* Defina a altura máxima desejada */
+    overflow: auto; /* Adiciona uma barra de rolagem se necessário */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+tbody tr:hover{
+    background-color: #edebeb;
+    transition: background-color 0.3s ease;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td{
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
 }
