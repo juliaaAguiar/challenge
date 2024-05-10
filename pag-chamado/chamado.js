@@ -13,25 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const equipe = document.getElementById('equipe').value;
         const problema = document.getElementById('problema').value;
 
-        enviarChamado(idAlerta, equipe, problema);
         salvarChamado(equipe, problema);
     });
-
-    function enviarChamado(idAlerta, equipe, problema) {
-        console.log('Chamado enviado:');
-        console.log('ID do Alerta:', idAlerta);
-        console.log('Equipe:', equipe);
-        console.log('Problema:', problema);
-
-        alert('Chamado enviado com sucesso! Entraremos em contato.');
-
-        form.reset();
-    }
 
     function salvarChamado(equipe, problema) {
         let codigo = gerarIdAutoIncrement();
         localStorage.setItem('codigoChamado', codigo);
-        alert( localStorage.getItem('codigoChamado') ); 
         let request = indexedDB.open("Tecsidel", 2);
 
         request.onupgradeneeded = function(event) {
@@ -54,8 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             addRequest.onerror = function(event) {
-                console.log(codigo);
-                console.log(event)
                 console.log("Erro ao salvar o chamado.");
             };
         };
