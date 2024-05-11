@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var parametros = new URLSearchParams(window.location.search);
-    var alerta = parametros.get("alerta");
+    const parametros = new URLSearchParams(window.location.search);
+    const alerta = parametros.get("alerta");
 
     const form = document.getElementById('chamado-form');
     const idAlerta = document.getElementById('id-alerta');
