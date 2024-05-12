@@ -21,16 +21,23 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('codigoChamado', codigo);
         let request = indexedDB.open("Tecsidel", 2);
 
+        request.onerror = function(event) {
+            console.log("Erro ao abrir o banco de dados.");
+        };
+
         request.onupgradeneeded = function(event) {
             let db = event.target.result;
             if (!db.objectStoreNames.contains("chamados")) {
-                db.createObjectStore("chamados", { keyPath: 'codigo' });
+                console.log("Store de objetos 'chamados' não encontrada. Criando...");
+                let objectStore = db.createObjectStore("chamados", { keyPath: 'codigo' });
+                console.log("Store de objetos 'chamados' criada com sucesso.");
             }
         };
-        
+
         request.onsuccess = function(event) {
             let db = event.target.result;
             let transaction = db.transaction(["chamados"], "readwrite");
+            console.log("Transação iniciada...");
             let objectStore = transaction.objectStore("chamados");
             let addRequest = objectStore.add({ codigo: codigo, descricao: problema, equipe: equipe, status: 'ativo' });
 
@@ -44,15 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log("Erro ao salvar o chamado.");
             };
         };
-
-        request.onerror = function(event) {
-            console.log("Erro ao abrir o banco de dados.");
-        };
     }
 
-    function gerarIdAutoIncrement()
-    {
+    function gerarIdAutoIncrement() {
         ultimoId++;
         return ultimoId;
     }
 });
+    

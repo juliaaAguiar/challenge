@@ -70,10 +70,10 @@ h1 {
 
 .circular-map {
     position: absolute;
-    width: 500px; /* Defina a largura desejada */
-    height: 500px; /* Defina a altura desejada */
-    border-radius: 50%; /* Torna o mapa circular */
-    overflow: hidden; /* Garante que o conteúdo dentro do círculo não ultrapasse os limites */
+    width: 500px; 
+    height: 500px; 
+    border-radius: 10%; 
+    overflow: hidden; 
     left: 65%;
     margin-top: 3%;
 }
