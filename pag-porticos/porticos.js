@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-// Tabela
+    // Tabela
     var data = [
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
+        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
         { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'OK' },
         { Identificação: 'TAG56', Categoria: 'Tag', Status: 'Erro' },
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
+        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
         { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'OK' },
         { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
+        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
         { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'Atenção' },
-        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },        
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
+        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },
+        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
         { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'OK' },
         { Identificação: 'TAG56', Categoria: 'Tag', Status: 'Erro' },
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
+        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
         { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'OK' },
         { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
+        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
         { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'Atenção' },
-        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },
+        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' }
     ];
 
     var tableContainer = document.getElementById('table-container');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var mainHeadRow = document.createElement('tr');
     var mainHeadCell = document.createElement('th');
-    mainHeadCell.textContent = 'Equipamentos Pórtico 1';
+    mainHeadCell.textContent = 'Equipamentos Pórtico';
     mainHeadCell.setAttribute('colspan', '4');
     mainHeadCell.style.textAlign = 'center';
     mainHeadRow.appendChild(mainHeadCell);
@@ -80,9 +80,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 } else if (item[key] === 'OK') {
                     div.style.backgroundColor = '#149D52';
-                    div.style.cursor = 'pointer';
+                    div.style.cursor = 'pointer'; // A chave final foi corrigida aqui
                     div.addEventListener('click', function () {
-                        window.location.href = "../pag-erro/erro2.html";
+                        window.location.href = "";
                     });
                 }
 
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tbody.appendChild(row);
     }
 
-    data.forEach(function(item) {
+    data.forEach(function (item) {
         addRow(item);
     });
 });

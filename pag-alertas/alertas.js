@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function exportToCSV(data) {
     var csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += "\uFEFF"; // BOM (Byte Order Mark) para indicar a codificação UTF-8
     csvContent += Object.keys(data[0]).join(",") + "\n";
     data.forEach(function (item) {
         var row = Object.values(item).join(",");
@@ -147,7 +148,7 @@ function exportToCSV(data) {
     var encodedUri = encodeURI(csvContent);
     var link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "data.csv");
+    link.setAttribute("download", "rel_alertas");
     document.body.appendChild(link);
     link.click();
 }

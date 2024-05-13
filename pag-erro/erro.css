@@ -15,6 +15,49 @@ body {
     transform: translateX(-50%);
 }
 
+/* Estilo para o texto do alerta */
+.alert-text {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #999; /* Cinza claro */
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Estilo para o ícone de alerta */
+
+.alert-text{
+    top: 15%;
+    left: 26%;
+}
+
+.status1 {
+    position: absolute;
+    top: 35%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2383A;
+}
+
+.status1 p {
+    margin: 0;
+    font-size: 32px;
+}
+
+.status1 i {
+    margin-top: 10px;
+    font-size: 54px;
+}
+
 .status1, 
 .status2{
     width: 200px;
