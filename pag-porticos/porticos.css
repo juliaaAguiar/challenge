@@ -75,20 +75,22 @@ h1 {
     border-radius: 10%; 
     overflow: hidden; 
     left: 65%;
-    margin-top: 3%;
+    margin-top: 2%;
 }
 
 #table-container {
     position: absolute;
-    top: 25%;
+    top: 23%;
     left: 15%;
-    width: 25%;
-    max-height: 50%; /* Defina a altura máxima desejada */
+    width: 45%;
+    max-height: 63%; 
     overflow: auto; /* Adiciona uma barra de rolagem se necessário */
     border-radius: 10px;
     transition: transform 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    left: 15%;
+    margin-top: 3%;
 }
 
 tbody tr:hover{

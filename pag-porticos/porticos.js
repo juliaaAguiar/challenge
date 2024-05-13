@@ -1,35 +1,5 @@
-// Inicializa o mapa
-var map = L.map('map').setView([-23.5505, -46.6333], 10); // Coordenadas de São Paulo e nível de zoom inicial
-
-// Adiciona o mapa base
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-// Adiciona marcadores de exemplo
-var porticos = [
-    { nome: 'Pórtico 1', lat: -23.5605, lng: -46.6433 },
-    { nome: 'Pórtico 2', lat: -23.5705, lng: -46.6533 },
-    { nome: 'Pórtico 3', lat: -23.5705, lng: -46.6633 },
-    { nome: 'Pórtico 4', lat: -23.5805, lng: -46.6733 }
-];
-
-porticos.forEach(function(portico) {
-    var marker = L.marker([portico.lat, portico.lng]);
-    if (portico.nome === 'Pórtico 1') {
-        marker = L.marker([portico.lat, portico.lng], {
-            icon: L.divIcon({
-                className: 'custom-icon',
-                html: '<div class="marker-icon" style="background-color: red;"></div>'
-            })
-        });
-    }
-    marker.addTo(map).bindPopup(portico.nome);
-});
-
-
 document.addEventListener('DOMContentLoaded', function () {
-    // Tabela
+// Tabela
     var data = [
         { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
         { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'OK' },
@@ -39,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },
         { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
         { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'Atenção' },
-        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
+        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },        
+        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
         { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'OK' },
         { Identificação: 'TAG56', Categoria: 'Tag', Status: 'Erro' },
         { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK'},
@@ -56,6 +27,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var tbody = document.createElement('tbody');
 
     table.appendChild(thead);
+
+    var mainHeadRow = document.createElement('tr');
+    var mainHeadCell = document.createElement('th');
+    mainHeadCell.textContent = 'Equipamentos Pórtico 1';
+    mainHeadCell.setAttribute('colspan', '4');
+    mainHeadCell.style.textAlign = 'center';
+    mainHeadRow.appendChild(mainHeadCell);
+    thead.appendChild(mainHeadRow);
 
     var headRow = document.createElement('tr');
     for (var key in data[0]) {
@@ -99,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     div.addEventListener('click', function () {
                         window.location.href = "../pag-erro/erro2.html";
                     });
-                }else if (item[key] === 'OK') {
+                } else if (item[key] === 'OK') {
                     div.style.backgroundColor = '#149D52';
                     div.style.cursor = 'pointer';
                     div.addEventListener('click', function () {

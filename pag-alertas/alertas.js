@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Tabela
     var data = [
-        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
-        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor1', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
-        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'CAM00175 ', Categoria: 'Equipamento', novaColuna: 'Valor1', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'ANT02524 ', Categoria: 'Equipamento', novaColuna: 'Valor2', Status: 'Erro' },
-        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', novaColuna: 'Valor4', Status: 'Erro' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificação: 'Evasão Pedágio', Categoria: 'Tarifa', novaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificacao: 'ANT02524', Categoria: 'Equipamento', NovaColuna: 'Valor2', Status: 'Erro' },
+        { Identificacao: 'Pórtico 0045', Categoria: 'Pórtico', NovaColuna: 'Valor4', Status: 'Erro' },
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', NovaColuna: 'Valor1', Status: 'Erro' },
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificacao: 'ANT02524', Categoria: 'Equipamento', NovaColuna: 'Valor2', Status: 'Erro' },
+        { Identificacao: 'Pórtico 0045', Categoria: 'Pórtico', NovaColuna: 'Valor4', Status: 'Erro' },
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', NovaColuna: 'Valor1', Status: 'Erro' },
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificacao: 'ANT02524', Categoria: 'Equipamento', NovaColuna: 'Valor2', Status: 'Erro' },
+        { Identificacao: 'Pórtico 0045', Categoria: 'Pórtico', NovaColuna: 'Valor4', Status: 'Erro' },
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
     ];
 
     var tableContainer = document.getElementById('table-container');
@@ -130,9 +130,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('export-csv').addEventListener('click', function () {
-        // Código para exportar para CSV
-        // Observe que este trecho de código está correto e não precisa de alterações
+        exportToCSV(data);
     });
 
     applyFilters();
 });
+
+function exportToCSV(data) {
+    var csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += Object.keys(data[0]).join(",") + "\n";
+    data.forEach(function (item) {
+        var row = Object.values(item).join(",");
+        csvContent += row + "\n";
+    });
+
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "data.csv");
+    document.body.appendChild(link);
+    link.click();
+}
