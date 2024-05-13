@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 
-    function gerarIdAutoIncrement()
-    {
+    function gerarIdAutoIncrement() {
         ultimoId++;
         return ultimoId;
     }
 });
+    

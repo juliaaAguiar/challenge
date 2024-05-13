@@ -12,13 +12,21 @@ var porticos = [
     { nome: 'Pórtico 2', lat: -23.5705, lng: -46.6533 },
     { nome: 'Pórtico 3', lat: -23.5705, lng: -46.6633 },
     { nome: 'Pórtico 4', lat: -23.5805, lng: -46.6733 }
-    // Adicione mais pórticos conforme necessário
 ];
 
 porticos.forEach(function(portico) {
-    L.marker([portico.lat, portico.lng]).addTo(map)
-        .bindPopup(portico.nome);
+    var marker = L.marker([portico.lat, portico.lng]);
+    if (portico.nome === 'Pórtico 1') {
+        marker = L.marker([portico.lat, portico.lng], {
+            icon: L.divIcon({
+                className: 'custom-icon',
+                html: '<div class="marker-icon" style="background-color: red;"></div>'
+            })
+        });
+    }
+    marker.addTo(map).bindPopup(portico.nome);
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
     // Tabela
