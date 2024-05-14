@@ -1,5 +1,71 @@
-h1 {
-    text-align: center;
-    margin: 20px 0;
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
 }
 
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Cor da barra de rolagem */
+    border-radius: 6px; /* Raio da borda da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; /* Cor de fundo da barra de rolagem */
+}
+/* Estilo da barra de rolagem */
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    color: #333; 
+    background-color: #f2f2f2; 
+    border-radius: 10px; 
+    border: 1px solid #ccc; 
+    padding: 10px 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}   
+
+.report-container {
+    max-width: 80%;
+    margin: 20px auto;
+    margin-left: 15%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+.vehicles {
+    color: #007bff;
+}
+
+.return a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.return a:hover {
+    text-decoration: underline;
+}
