@@ -1,46 +1,49 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Gráfico de dispersão com linhas
-    var scatterCtx = document.getElementById('graph1').getContext('2d');
-    var scatterChart = new Chart(scatterCtx, {
-        type: 'scatter',
-        data: {
-            datasets: [{
-                label: 'Incidentes',
-                data: [
-                    { x: 1, y: 1 },
-                    { x: 2, y: 3 },
-                    { x: 3, y: 1 },
-                    { x: 4, y: 4 },
-                    { x: 5, y: 2 },
-                    { x: 6, y: 5 },
-                    { x: 7, y: 3 },
-                    { x: 8, y: 6 },
-                    { x: 9, y: 4 },
-                    { x: 10, y: 7 }
-                ],
-                backgroundColor: '#1186F6',
-                borderColor: '#1186F6',
-                borderWidth: 1,
-                showLine: true // Exibe linhas conectando os pontos
-            }]
-        },
-        options: {
-            responsive: false,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Eixo X'
-                    }
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: 'Eixo Y'
-                    }
+    // Dados do gráfico
+    var dados = {
+        labels: ['09/05/2023', '10/05/2023', '11/05/2023', '12/05/2023', '13/05/2023'], // Rótulos do eixo x (datas)
+        datasets: [{
+            label: 'Erros',
+            data: [1, 0, 0, 0, 10],
+            backgroundColor: '#F2383A',
+            barPercentage: 0.5 // Ajustando a largura das barras
+        }]
+    };
+
+    // Encontrando o valor máximo dos dados
+    var maxDataValue = Math.max(...dados.datasets[0].data);
+
+    // Opções do gráfico
+    var opcoes = {
+        responsive: false,
+        maintainAspectRatio: false,
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: ''
                 }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Quantidade'
+                },
+                ticks: {
+                    beginAtZero: true // Começa o eixo y em zero
+                },
+                suggestedMax: maxDataValue + 5 // Definindo o valor máximo sugerido para a escala do eixo y
             }
         }
+    };
+
+    // Obtém o contexto do canvas
+    var ctx = document.getElementById('graficoBarras').getContext('2d');
+
+    // Cria o gráfico de barras
+    var grafico = new Chart(ctx, {
+        type: 'bar',
+        data: dados,
+        options: opcoes
     });
 });

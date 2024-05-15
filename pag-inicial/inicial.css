@@ -13,7 +13,13 @@
 }
 /* Estilo da barra de rolagem */
 
+.container2 {
+    display: flex;
+    align-items: center; /* Alinha itens verticalmente */
+}
+
 h1 {
+    width: 92%;
     text-align: center;
     margin-bottom: 20px;
     font-family: "Arial", sans-serif;
@@ -24,6 +30,18 @@ h1 {
     border: 1px solid #ccc; 
     padding: 10px 20px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+#relatorio {
+    padding: 15px 15px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #008CBA;
+    margin-left: 15%;
+    margin-top: 10px;
 }
 
 /* Indicador */

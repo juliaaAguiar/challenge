@@ -2,12 +2,6 @@ body {
     overflow: hidden;
 }
 
-#graph1{
-    position: fixed;
-    border-radius: 5px;
-    border: 1px solid #585960;
-}
-
 .error-text{
     position: absolute;
     top: 25%;
@@ -94,10 +88,42 @@ body {
     font-size: 54px; 
 }
 
-#graph1 {
-    position: absolute;
-    top: 55%;
-    left: 20%;
-    transform: translateX(-50% , -50%);
-    width: 80%; 
+.veiculo-historico {
+    width: 70%;
+    margin-top: 10%; 
+    margin-left: 10%; 
+    overflow-x: auto;
+}
+
+.veiculo-historico table {
+    width: 100%;
+}
+
+.veiculo-historico th {
+    background-color: #0073ba; 
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+.veiculo-historico td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Linha divisória entre as células */
+    text-align: center;
+}
+
+/* Estilo para a primeira célula do cabeçalho */
+.veiculo-historico th:first-child {
+    border-top-left-radius: 8px; /* Borda arredondada superior esquerda */
+}
+
+/* Estilo para a última célula do cabeçalho */
+.veiculo-historico th:last-child {
+    border-top-right-radius: 8px; /* Borda arredondada superior direita */
+}
+
+/* Estilo para as células ímpares */
+.veiculo-historico tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Cor de fundo das linhas ímpares */
 }
