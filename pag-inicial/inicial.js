@@ -200,7 +200,7 @@ barChart.update();
         { Identificação: 'CAM00175 ', Categoria: 'Equipamento', Data: '05/05/2024', Status: 'Erro', Id: 1},
         { Identificação : 'Evasão Pedágio', Categoria: 'Tarifa', Data: '04/05/2024', Status: 'Atenção', Id: 2},
         { Identificação: 'ANT02524 ', Categoria: 'Equipamento', Data: '03/05/2024', Status: 'Erro', Id: 3},
-        { Identificação: 'Pórtico 0045', Categoria: 'Pórtico', Data: '02/01/2024', Status: 'Erro', Id: 4},
+        { Identificação: 'Pórtico 4', Categoria: 'Pórtico', Data: '02/01/2024', Status: 'Erro', Id: 4},
     ];
 
     // Criação da tabela

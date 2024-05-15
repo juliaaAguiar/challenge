@@ -44,13 +44,14 @@ table#task-content tbody tr:nth-child(even) {
 button#create-chamado-btn {
   position: absolute;
   top: 26%;
-  right: 45px;
+  right: 50px;
   padding: 10px 20px;
   background-color: #008CBA;
   color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  margin-left: 165%;
 }
 
 button#create-chamado-btn:hover {

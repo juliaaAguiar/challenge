@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Tabela
     var data = [
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
+        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'Erro' },
+        { Identificação: 'CAM00176 ', Categoria: 'Antena', Status: 'OK' },
+        { Identificação: 'CAM00177', Categoria: 'Tag', Status: 'OK' },
+        { Identificação: 'CAM00178 ', Categoria: 'Camera', Status: 'OK' },
+        { Identificação: 'CAM00179 ', Categoria: 'Antena', Status: 'OK' },
+        { Identificação: 'TAG50', Categoria: 'Tag', Status: 'OK' },
+        { Identificação: 'TAG51 ', Categoria: 'Camera', Status: 'OK' },
+        { Identificação: 'TAG52 ', Categoria: 'Antena', Status: 'OK' },
+        { Identificação: 'TAG53', Categoria: 'Tag', Status: 'OK' },
+        { Identificação: 'TAG54 ', Categoria: 'Camera', Status: 'OK' },
         { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'OK' },
-        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'Erro' },
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
-        { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'OK' },
-        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
-        { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'Atenção' },
-        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
-        { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'OK' },
-        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'Erro' },
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
-        { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'OK' },
-        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' },
-        { Identificação: 'CAM00175 ', Categoria: 'Camera', Status: 'OK' },
-        { Identificação: 'ANT02524 ', Categoria: 'Antena', Status: 'Atenção' },
-        { Identificação: 'TAG56', Categoria: 'Tag', Status: 'OK' }
+        { Identificação: 'ANT02525 ', Categoria: 'Tag', Status: 'OK' },
+        { Identificação: 'ANT02526  ', Categoria: 'Camera', Status: 'OK' },
+        { Identificação: 'ANT02526 ', Categoria: 'Antena', Status: 'OK' },
+        { Identificação: 'ANT02528 ', Categoria: 'Tag', Status: 'OK' },
+        { Identificação: 'ANT02529 ', Categoria: 'Camera', Status: 'OK' },
+        { Identificação: 'ANT02530 ', Categoria: 'Antena', Status: 'OK' },
+        { Identificação: 'ANT02531  ', Categoria: 'Tag', Status: 'OK' }
     ];
 
     var tableContainer = document.getElementById('table-container');

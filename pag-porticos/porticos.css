@@ -13,7 +13,6 @@
 }
 /* Estilo da barra de rolagem */
 
-
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -69,18 +68,19 @@ h1 {
 }
 
 .circular-map {
-    position: absolute;
-    width: 500px; 
-    height: 500px; 
-    border-radius: 10%; 
-    overflow: hidden; 
-    left: 65%;
-    margin-top: 2%;
+    position: fixed; /* Alterado para 'fixed' para garantir que o elemento permaneça na mesma posição enquanto a página é rolada */
+    width: 30vw; /* Utilizando viewport units para definir a largura */
+    height: 30vw; /* Mantendo a proporção para uma forma circular */
+    border-radius: 10%; /* Alterado para 50% para criar um círculo */
+    overflow: hidden; /* Overflow oculto para esconder qualquer conteúdo que exceda o círculo */
+    right: 5%; /* Ajustando a posição do círculo em relação à margem direita */
+    top: 28%; /* Ajustando a posição do círculo em relação à margem superior */
+    z-index: 999; /* Ajustando o z-index para garantir que o círculo esteja na frente de outros elementos */
 }
+
 
 #table-container {
     position: absolute;
-    top: 23%;
     left: 15%;
     width: 45%;
     max-height: 63%; 

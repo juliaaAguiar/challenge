@@ -1,42 +1,28 @@
 body {
     overflow: hidden;
 }
-
-.error-text{
-    position: absolute;
+.error-text, .alert-text {
+    position: fixed;
+    left: 38%;
     top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
 }
+
 
 /* Estilo para o texto do alerta */
 .alert-text {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     color: #999; /* Cinza claro */
     font-size: 14px;
     text-align: center;
+    margin-left: 5%;
+    top: 16%;
 }
-
-/* Estilo para o ícone de alerta */
-
-.alert-text{
-    top: 15%;
-    left: 26%;
-}
-
+    
 .status1 {
-    position: absolute;
+    position: fixed;
     top: 35%;
-    left: 26%;
-    transform: translate(-50%, -50%);
     width: 200px;
     height: 200px;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #F2383A;
@@ -86,6 +72,13 @@ body {
 .status2 i {
     margin-top: 10px; 
     font-size: 54px; 
+}
+
+#graficoBarras {
+    position: fixed;
+    top: 55%;
+    max-width: 75%;
+    margin-left: 9%;
 }
 
 .veiculo-historico {
