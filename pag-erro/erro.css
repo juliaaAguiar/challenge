@@ -10,7 +10,7 @@ body {
 
 /* Estilo para o texto do alerta */
 .alert-text {
-    color: #999; /* Cinza claro */
+    color: #999; 
     font-size: 14px;
     text-align: center;
     margin-left: 5%;

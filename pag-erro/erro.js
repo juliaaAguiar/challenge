@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
             label: 'Erros',
             data: [1, 0, 0, 0, 10],
             backgroundColor: '#F2383A',
-            barPercentage: 0.5 // Ajustando a largura das barras
+            barPercentage: 0.5 
         }]
     };
 

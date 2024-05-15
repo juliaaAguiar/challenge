@@ -5,7 +5,7 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2); /* Cor da barra de rolagem */
-    border-radius: 6px; /* Raio da borda da barra de rolagem */
+    border-radius: 6px; 
 }
 
 ::-webkit-scrollbar-track {
@@ -62,8 +62,8 @@ h1 {
 }
 
 .report-table th {
-    background-color: #0073ba; /* Cor de fundo do cabeçalho da tabela */
-    color: white; /* Cor do texto do cabeçalho da tabela */
+    background-color: #0073ba; 
+    color: white; 
     font-weight: bold;
     padding: 10px;
     text-align: center;
@@ -71,7 +71,7 @@ h1 {
 
 .report-table td {
     padding: 10px;
-    border-bottom: 1px solid #ddd; /* Linha divisória entre as células */
+    border-bottom: 1px solid #ddd;
     text-align: center;
 }
 

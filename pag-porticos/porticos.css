@@ -5,7 +5,7 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2); /* Cor da barra de rolagem */
-    border-radius: 6px; /* Raio da borda da barra de rolagem */
+    border-radius: 6px; 
 }
 
 ::-webkit-scrollbar-track {
@@ -68,14 +68,14 @@ h1 {
 }
 
 .circular-map {
-    position: fixed; /* Alterado para 'fixed' para garantir que o elemento permaneça na mesma posição enquanto a página é rolada */
-    width: 30vw; /* Utilizando viewport units para definir a largura */
-    height: 30vw; /* Mantendo a proporção para uma forma circular */
-    border-radius: 10%; /* Alterado para 50% para criar um círculo */
-    overflow: hidden; /* Overflow oculto para esconder qualquer conteúdo que exceda o círculo */
-    right: 5%; /* Ajustando a posição do círculo em relação à margem direita */
-    top: 28%; /* Ajustando a posição do círculo em relação à margem superior */
-    z-index: 999; /* Ajustando o z-index para garantir que o círculo esteja na frente de outros elementos */
+    position: fixed; 
+    width: 30vw;
+    height: 30vw; 
+    border-radius: 10%;
+    overflow: hidden; 
+    right: 5%; 
+    top: 28%; 
+    z-index: 999; 
 }
 
 
@@ -84,7 +84,7 @@ h1 {
     left: 15%;
     width: 45%;
     max-height: 63%; 
-    overflow: auto; /* Adiciona uma barra de rolagem se necessário */
+    overflow: auto; 
     border-radius: 10px;
     transition: transform 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
