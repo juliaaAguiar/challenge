@@ -2,23 +2,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // Tabela
     var data = [
         { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
-        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificacao: 'ANT02524', Categoria: 'Equipamento', NovaColuna: 'Valor2', Status: 'Erro' },
-        { Identificacao: 'Pórtico 0045', Categoria: 'Pórtico', NovaColuna: 'Valor4', Status: 'Erro' },
-        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificacao: 'CAM00175', Categoria: 'Equipamento', NovaColuna: 'Valor1', Status: 'Erro' },
-        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificacao: 'ANT02524', Categoria: 'Equipamento', NovaColuna: 'Valor2', Status: 'Erro' },
-        { Identificacao: 'Pórtico 0045', Categoria: 'Pórtico', NovaColuna: 'Valor4', Status: 'Erro' },
-        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificacao: 'CAM00175', Categoria: 'Equipamento', NovaColuna: 'Valor1', Status: 'Erro' },
-        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificacao: 'ANT02524', Categoria: 'Equipamento', NovaColuna: 'Valor2', Status: 'Erro' },
-        { Identificacao: 'Pórtico 0045', Categoria: 'Pórtico', NovaColuna: 'Valor4', Status: 'Erro' },
-        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
-        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NovaColuna: 'Valor3', Status: 'Atenção' },
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', Data: '2024-04-18', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', Data: '2024-04-18', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', Data: '2024-04-18', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', Data: '2024-04-18', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', Data: '2024-04-18', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', Data: '2024-04-18', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', Data: '2024-04-18', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', NData: '2024-04-18', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', Data: '2024-04-18', Status: 'Atenção' },
+        { Identificacao: 'CAM00175', Categoria: 'Equipamento', Data: '2023-02-05', Status: 'Erro'},
+        { Identificacao: 'Evasão Pedágio', Categoria: 'Tarifa', Data: '2024-04-18', Status: 'Atenção' },
     ];
 
     var tableContainer = document.getElementById('table-container');
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var th = document.createElement('th');
         if (key === 'Status') {
             th.textContent = 'Status';
-        } else if (key === 'Data') {
+        } else if (key === 'a') {
             th.textContent = 'Data';
         } else {
             th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
@@ -46,109 +48,109 @@ document.addEventListener('DOMContentLoaded', function () {
     tableContainer.appendChild(table);
     table.appendChild(tbody);
 
-    function addRow(item) {
-        var row = document.createElement('tr');
-        for (var key in item) {
-            var cell = document.createElement('td');
-            if (key === 'Status') {
-                var div = document.createElement('div');
-                div.textContent = item[key];
-                div.style.height = '25px';
-                div.style.borderRadius = '5px';
-                div.style.textAlign = 'center';
+function addRow(item) {
+    var row = document.createElement('tr');
+    for (var key in item) {
+        var cell = document.createElement('td');
+        if (key === 'Status') {
+            var div = document.createElement('div');
+            div.textContent = item[key];
+            div.style.height = '25px';
+            div.style.borderRadius = '5px';
+            div.style.textAlign = 'center';
 
-                if (item[key] === 'Erro') {
-                    div.style.backgroundColor = '#F2383A';
-                    div.style.color = '#FFFFFF';
-                    div.style.cursor = 'pointer';
-                    div.addEventListener('click', function () {
-                        window.location.href = "../pag-erro/erro.html";
-                    });
-                } else if (item[key] === 'Atenção') {
-                    div.style.backgroundColor = '#F4DB00';
-                    div.style.cursor = 'pointer';
-                    div.addEventListener('click', function () {
-                        window.location.href = "../pag-erro/erro2.html";
-                    });
-                }
-
-                cell.appendChild(div);
-            } else if (key === 'Data') {
-                var dateParts = item[key].split('-');
-                var formattedDate = dateParts[2] + '/' + dateParts[1] + '/' + dateParts[0];
-                cell.textContent = formattedDate;
-                cell.style.textAlign = 'center';
-            } else {
-                cell.textContent = item[key];
-                cell.style.textAlign = 'center';
+            if (item[key] === 'Erro') {
+                div.style.backgroundColor = '#F2383A';
+                div.style.color = '#FFFFFF';
+                div.style.cursor = 'pointer';
+                div.addEventListener('click', function () {
+                    window.location.href = "../pag-erro/erro.html";
+                });
+            } else if (item[key] === 'Atenção') {
+                div.style.backgroundColor = '#F4DB00';
+                div.style.cursor = 'pointer';
+                div.addEventListener('click', function () {
+                    window.location.href = "../pag-erro/erro2.html";
+                });
             }
-            row.appendChild(cell);
+
+            cell.appendChild(div);
+        } else if (key === 'Data') {
+            var dateParts = item[key].split('-');
+            var formattedDate = formatDate(dateParts[2], dateParts[1], dateParts[0]);
+            cell.textContent = formattedDate;
+            cell.style.textAlign = 'center';
+        } else {
+            cell.textContent = item[key];
+            cell.style.textAlign = 'center';
         }
-        tbody.appendChild(row);
+        row.appendChild(cell);
     }
+    tbody.appendChild(row);
+}
 
-    data.forEach(function(item) {
-        addRow(item);
-    });
+function formatDate(day, month, year) {
+    return day + '/' + month + '/' + year;
+}
 
-    function applyFilters() {
-        var categoryFilter = document.getElementById('category-filter').value;
-        var dateFilter = document.getElementById('date-filter').value;
+        function applyFilters() {
+            var categoryFilter = document.getElementById('category-filter').value;
+            var dateFilter = document.getElementById('date-filter').value;
 
-        tbody.innerHTML = '';
+            tbody.innerHTML = '';
 
-        data.forEach(function (item) {
-            if ((categoryFilter === 'Todos' || item.Categoria === categoryFilter) &&
-                (dateFilter === '' || item.Data === dateFilter)) {
-                addRow(item);
-            }
-        });
-    }
-
-    document.getElementById('category-filter').addEventListener('change', applyFilters);
-    document.getElementById('date-filter').addEventListener('change', applyFilters);
-
-    document.getElementById('search-button').addEventListener('click', function () {
-        var searchText = document.getElementById('search-input').value.toLowerCase();
-        var filteredData = data.filter(function (item) {
-            for (var key in item) {
-                if (item[key].toLowerCase().includes(searchText)) {
-                    return true;
+            data.forEach(function (item) {
+                if ((categoryFilter === 'Todos' || item.Categoria === categoryFilter) &&
+                    (dateFilter === '' || item.Data === dateFilter)) {
+                    addRow(item);
                 }
-            }
-            return false;
-        });
-        tbody.innerHTML = '';
-        filteredData.forEach(function (item) {
-            addRow(item);
-        });
-    });
+            });
+        }
 
-    document.getElementById('clear-button').addEventListener('click', function () {
-        document.getElementById('search-input').value = '';
+        document.getElementById('category-filter').addEventListener('change', applyFilters);
+        document.getElementById('date-filter').addEventListener('change', applyFilters);
+
+        document.getElementById('search-button').addEventListener('click', function () {
+            var searchText = document.getElementById('search-input').value.toLowerCase();
+            var filteredData = data.filter(function (item) {
+                for (var key in item) {
+                    if (item[key].toLowerCase().includes(searchText)) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+            tbody.innerHTML = '';
+            filteredData.forEach(function (item) {
+                addRow(item);
+            });
+        });
+
+        document.getElementById('clear-button').addEventListener('click', function () {
+            document.getElementById('search-input').value = '';
+            applyFilters();
+        });
+
+        document.getElementById('export-csv').addEventListener('click', function () {
+            exportToCSV(data);
+        });
+
         applyFilters();
     });
 
-    document.getElementById('export-csv').addEventListener('click', function () {
-        exportToCSV(data);
-    });
+    function exportToCSV(data) {
+        var csvContent = "data:text/csv;charset=utf-8,";
+        csvContent += "\uFEFF"; // BOM (Byte Order Mark) para indicar a codificação UTF-8
+        csvContent += Object.keys(data[0]).join(",") + "\n";
+        data.forEach(function (item) {
+            var row = Object.values(item).join(",");
+            csvContent += row + "\n";
+        });
 
-    applyFilters();
-});
-
-function exportToCSV(data) {
-    var csvContent = "data:text/csv;charset=utf-8,";
-    csvContent += "\uFEFF"; // BOM (Byte Order Mark) para indicar a codificação UTF-8
-    csvContent += Object.keys(data[0]).join(",") + "\n";
-    data.forEach(function (item) {
-        var row = Object.values(item).join(",");
-        csvContent += row + "\n";
-    });
-
-    var encodedUri = encodeURI(csvContent);
-    var link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "rel_alertas");
-    document.body.appendChild(link);
-    link.click();
-}
+        var encodedUri = encodeURI(csvContent);
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "rel_alertas");
+        document.body.appendChild(link);
+        link.click();
+    }

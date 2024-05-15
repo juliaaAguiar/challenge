@@ -33,7 +33,7 @@ table#task-content td {
 }
 
 table#task-content th {
-  background-color: #007bff;
+  background-color: #0073ba;
   color: #fff;
 }
 
@@ -46,7 +46,7 @@ button#create-chamado-btn {
   top: 26%;
   right: 45px;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #008CBA;
   color: #fff;
   border: none;
   border-radius: 10px;

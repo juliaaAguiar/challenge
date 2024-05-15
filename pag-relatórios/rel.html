@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório de Distribuição de Veículos</title>
+    <title>Tecsidel</title>
     <link rel="icon" href="../pag-login/assets/logotipo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../pag-login/style.css">
@@ -25,6 +25,12 @@
 
     <h1>Relatório Visão Geral</h1>
 
+    <label for="date-filter">Filtrar por Data:</label>
+    <input type="date" id="date-filter">
+    <button id="filtrarBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button id="clearBtn"><i class="fa-solid fa-ban"></i></button>
+    <button id="exportCsvBtn"><i class="fa-solid fa-download"></i></button>    
+
     <div class="menu">
         <div class="sidebar">
             <div class="naveg">
@@ -41,71 +47,188 @@
     </div>
 
     <div class="report-container">
-        <div class="section">
-            <h2><i class="fas fa-car-side"></i> Fluxo de Veículos</h2>
-            <ul>
-                <li><strong>Semana Atual:</strong>
-                    <ul>
-                        <li><i class="far fa-clock"></i> 08:00 - 15 veículos</li>
-                        <li><i class="far fa-clock"></i> 10:00 - 5 veículos</li>
-                        <li><i class="far fa-clock"></i> 12:00 - 8 veículos</li>
-                        <li><i class="far fa-clock"></i> 14:00 - 8 veículos</li>
-                        <li><i class="far fa-clock"></i> 16:00 - 13 veículos</li>
-                        <li><i class="far fa-clock"></i> 18:00 - 15 veículos</li>
-                        <li><i class="far fa-clock"></i> 20:00 - 10 veículos</li>
-                        <li><i class="far fa-clock"></i> 22:00 - 3 veículos</li>
-                        <li><i class="far fa-clock"></i> 00:00 - 2 veículos</li>
-                    </ul>
-                </li>
-                <li><strong>Semana Passada:</strong>
-                    <ul>
-                        <li><i class="far fa-clock"></i> 08:00 - 13 veículos</li>
-                        <li><i class="far fa-clock"></i> 10:00 - 4 veículos</li>
-                        <li><i class="far fa-clock"></i> 12:00 - 5 veículos</li>
-                        <li><i class="far fa-clock"></i> 14:00 - 5 veículos</li>
-                        <li><i class="far fa-clock"></i> 16:00 - 8 veículos</li>
-                        <li><i class="far fa-clock"></i> 18:00 - 10 veículos</li>
-                        <li><i class="far fa-clock"></i> 20:00 - 13 veículos</li>
-                        <li><i class="far fa-clock"></i> 22:00 - 6 veículos</li>
-                        <li><i class="far fa-clock"></i> 00:00 - 4 veículos</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2><i class="fas fa-truck-moving"></i> Distribuição Fluxo de Veículos</h2>
-            <ul>
-                <li><i class="fas fa-truck"></i> Caminhão: 10</li>
-                <li><i class="fas fa-car"></i> Carro: 20</li>
-                <li><i class="fas fa-motorcycle"></i> Moto: 30</li>
-                <li><i class="fas fa-bus"></i> Ônibus: 40</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2><i class="far fa-calendar-alt"></i> Fluxo de Veículos por Dia da Semana</h2>
-            <ul>
-                <li>Segunda-feira: 12.000 veículos</li>
-                <li>Terça-feira: 3.500 veículos</li>
-                <li>Quarta-feira: 7.000 veículos</li>
-                <li>Quinta-feira: 11.000 veículos</li>
-                <li>Sexta-feira: 9.000 veículos</li>
-                <li>Sábado: 13.000 veículos</li>
-                <li>Domingo: 5.000 veículos</li>
-            </ul>
-        </div>
-                
-        <div class="section">
-            <h2><i class="fas fa-chart-line"></i> Indicadores</h2>
-            <ul>
-                <li><i class="fas fa-exclamation-circle"></i> Incidentes Hoje: 23</li>
-                <li><i class="fas fa-exclamation-triangle"></i> Erros: 115/500</li>
-                <li><i class="fas fa-car-crash"></i> Taxa de Congestionamento: 30%</li>
-                <li><i class="fas fa-traffic-light"></i> Status Fluxo: Normal</li>
-            </ul>
-        </div>
+        <table class="report-table" id="distribuicao-veiculos">
+            <tbody>
+                <tr>
+                    <th>Distribuição Fluxo de Veículos</th>
+                    <th>Quantidade</th>
+                    <th>Data</th>
+                </tr>
+                <tr>
+                    <td>Caminhão</td>
+                    <td>10%</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Carro</td>
+                    <td>20%</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Moto</td>
+                    <td>30%</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Ônibus</td>
+                    <td>40%</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Caminhão</td>
+                    <td>10%</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Carro</td>
+                    <td>20%</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Moto</td>
+                    <td>30%</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Ônibus</td>
+                    <td>40%</td>
+                    <td>2024-05-06</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <table class="report-table" id="fluxo-semana">
+            <tbody>
+                <tr>
+                    <th>Fluxo de Veículos por Dia da Semana</th>
+                    <th>Quantidade</th>
+                    <th>Data</th>
+                </tr>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td>12.000 veículos</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Terça-feira</td>
+                    <td>3.500 veículos</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+                    <td>7.000 veículos</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Quinta-feira</td>
+                    <td>11.000 veículos</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Sexta-feira</td>
+                    <td>9.000 veículos</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Sábado</td>
+                    <td>13.000 veículos</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Domingo</td>
+                    <td>5.000 veículos</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td>12.000 veículos</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Terça-feira</td>
+                    <td>3.500 veículos</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+                    <td>7.000 veículos</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Quinta-feira</td>
+                    <td>11.000 veículos</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Sexta-feira</td>
+                    <td>9.000 veículos</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Sábado</td>
+                    <td>13.000 veículos</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Domingo</td>
+                    <td>5.000 veículos</td>
+                    <td>2024-05-06</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <table class="report-table" id="indicadores">
+            <tbody>
+                <tr>
+                    <th>Indicadores</th>
+                    <th>Dados</th>
+                    <th>Data</th>
+                </tr>
+                <tr>
+                    <td>Incidentes</td>
+                    <td>23</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Erros</td>
+                    <td>115/500</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Taxa de Congestionamento</td>
+                    <td>30%</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Status Fluxo</td>
+                    <td>Normal</td>
+                    <td>2024-05-05</td>
+                </tr>
+                <tr>
+                    <td>Incidentes</td>
+                    <td>23</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Erros</td>
+                    <td>115/500</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Taxa de Congestionamento</td>
+                    <td>30%</td>
+                    <td>2024-05-06</td>
+                </tr>
+                <tr>
+                    <td>Status Fluxo</td>
+                    <td>Normal</td>
+                    <td>2024-05-06</td>
+                </tr>
+
+            </tbody>
+        </table>
     </div>
+    
 
     <script src="rel.js"></script>
 </body>

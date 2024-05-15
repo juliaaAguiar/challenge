@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const idAlerta = document.getElementById('id-alerta');
 
     if (alerta != null || alerta !== '') idAlerta.value = alerta; 
-    let ultimoId = localStorage.getItem('codigoChamado') ?? 0;
+    let ultimoId = localStorage.getItem('codigoChamado') || 0;
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function gerarIdAutoIncrement() {
         ultimoId++;
+        localStorage.setItem('codigoChamado', ultimoId);
         return ultimoId;
     }
 });
-    
