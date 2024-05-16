@@ -1,11 +1,11 @@
 /* Estilo da barra de rolagem */
 ::-webkit-scrollbar {
-    width: 12px; 
+    width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #888; 
-    border-radius: 6px; 
+    background-color: #888;
+    border-radius: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -18,12 +18,12 @@ h1 {
     margin-bottom: 20px;
     font-family: "Arial", sans-serif;
     font-size: 32px;
-    color: #333; 
-    background-color: #f2f2f2; 
-    border-radius: 10px; 
-    border: 1px solid #ccc; 
-    padding: 10px 20px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    color: #333;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para o contêiner dos filtros */
@@ -38,33 +38,33 @@ h1 {
 
 /* Estilos para o select de categoria */
 #category-filter {
-    padding: 5px; 
-    border-radius: 5px; 
+    padding: 5px;
+    border-radius: 5px;
     border: 1px solid #ccc;
     outline: none;
 }
 
 /* Estilos para o input de data */
 #date-filter {
-    padding: 5px; 
-    border-radius: 5px; 
+    padding: 5px;
+    border-radius: 5px;
     border: 1px solid #ccc;
     outline: none;
 }
 
 /* Estilos para o input de pesquisa */
 #search-input {
-    padding: 5px; 
-    border-radius: 5px; 
-    border: 1px solid #ccc; 
-    width: 200px; 
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
     margin-right: 10px;
 }
 
 /* Estilos para o input de pesquisa quando estiver em foco */
 #search-input:focus {
-    border-color: #66afe9; 
-    outline: none; 
+    border-color: #66afe9;
+    outline: none;
 }
 
 /* Estilos para os botões */
@@ -77,11 +77,11 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-bottom: 10px;
-    background-color: #008CBA
+    background-color: #008CBA;
 }
 
 #search-button:hover, #clear-button:hover, #export-csv:hover {
-    background-color: #0073ba; 
+    background-color: #0073ba;
 }
 
 #export-csv {
@@ -89,30 +89,30 @@ button {
 }
 
 #table-container {
-    position: relative; 
+    position: relative;
     top: 25%;
     left: 15%;
     width: 83%;
-    overflow: auto; 
+    overflow: auto;
     border-radius: 10px;
     transition: transform 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
-tbody tr:hover{
+tbody tr:hover {
     background-color: #edebeb;
     transition: background-color 0.3s ease;
 }
 
-table{
+table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
 table th,
-table td{
+table td {
     padding: 8px;
     border: 1px solid #ddd;
     text-align: left;
@@ -123,24 +123,24 @@ table th {
 }
 
 /* Estilos para telas menores que 800px de largura */
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     h1 {
         width: 80%;
         text-align: center;
         margin-bottom: 20px;
         font-family: "Arial", sans-serif;
         font-size: 20px;
-        padding: 10px 20px; 
+        padding: 10px 20px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-left: 20%; 
+        margin-left: 20%;
     }
 
     #date-filter {
         margin-left: 12%;
-        padding: 1px; 
+        padding: 1px;
         margin-top: 5px;
     }
-    
+
     /* Estilos para os botões */
     button {
         padding: 8px 8px;
@@ -152,20 +152,20 @@ table th {
         margin-left: 35%;
         font-size: 13px;
     }
-    
+
     .filters label {
         margin-right: 5px; /* Espaçamento direito entre as labels e os elementos */
     }
-    
+
     /* Estilos para o select de categoria */
     #category-filter {
-        padding: 1px; 
+        padding: 1px;
         margin-left: 4%;
     }
 
     #search-input {
-        padding: 1px; 
-        width: 180px; 
+        padding: 1px;
+        width: 180px;
         margin-top: 5px;
         margin-right: 10px;
     }
@@ -179,10 +179,9 @@ table th {
         margin-left: 20%;
         font-size: 12px;
     }
-    
+
     table th,
-    table td{
+    table td {
         padding: 5px;
     }
-    
 }

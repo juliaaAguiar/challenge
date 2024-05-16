@@ -1,51 +1,53 @@
 .container2 {
     width: 70%;
-    height: 500px; 
-    overflow: auto;
-    margin-top: 3%; 
-    margin-left: 18%; 
+    height: auto;
+    overflow-y: auto;
+    margin-top: 3%;
+    margin-left: 20%;
+    margin-right: auto;
     background-color: #e4e4e4;
     border: 2px solid #007bff;
-    border-radius: 10px;  
+    border-radius: 10px;
     position: relative;
-
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 label {
-    display: inline-block;
+    display: block;
     width: 170px;
     font-weight: bold;
-    margin-left: 65px;
+    margin-left: 0;
 }
 
 input[type="text"],
 select,
 textarea {
-    width: calc(100% - 170px); 
+    width: calc(100% - 170px);
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-left: 65px;
+    margin-left: 0;
 }
 
 .form-group {
     margin-bottom: 20px;
+    margin-left: 5%;
 }
 
 textarea {
     height: 100px;
+    resize: vertical;
 }
 
 button {
-    position: absolute;
-    bottom: 10px; 
-    left: 70%; 
-    width: 25%;
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
     padding: 15px;
     background-color: #008CBA;
     color: #fff;
@@ -59,32 +61,29 @@ button:hover {
 }
 
 /* Estilos para telas menores que 800px de largura */
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     h1 {
         font-size: 20px;
     }
 
     label {
-        display: inline-block;
-        width: 100px;
-        font-weight: bold;
-        margin-left: 23%;
+        width: 100%;
+        margin-left: 0;
     }
-    
+
     .container2 {
-        margin-left: 30%;
-        width: 68%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 10%;
     }
-    
+
     .form-group {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
-    
-    
+
     button {
-        left: 65%; 
-        width: 30%;
-        padding: 5px;
+        width: 100%;
+        padding: 10px;
     }
 }
