@@ -119,14 +119,49 @@ table th {
 @media screen and (max-width: 800px){
     h1 {
         width: 70%;
-        text-align: center;
-        margin-bottom: 20px;
-        font-family: "Arial", sans-serif;
         font-size: 20px;
-        padding: 10px 20px; 
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         margin-left: 20%; 
     }
 
+    #porticos-container {
+        position: fixed;
+        top: 13%;
+        left: 30%;
+        width: 68%;
+        font-size: 13px;
+    }
     
+    .circular-map {
+        width: 62vw;
+        height: 60vw; 
+        border-radius: 10%;
+        overflow: hidden; 
+        right: 5%; 
+        margin-top: 63%;
+    }
+    
+    #table-container {
+        margin-left: 17%;
+        width: 65%;
+        max-height: 40%; 
+        font-size: 12px;
+    }
+    
+    tbody tr:hover{
+        background-color: #edebeb;
+        transition: background-color 0.3s ease;
+    }
+    
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    
+    table th,
+    table td{
+        padding: 8px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
 }

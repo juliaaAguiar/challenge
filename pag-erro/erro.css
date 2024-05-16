@@ -123,15 +123,125 @@ body {
 
 /* Estilos para telas menores que 800px de largura */
 @media screen and (max-width: 800px){
-    h1 {
-        width: 50%;
+    .error-text, .alert-text {
+        position: fixed;
+        left: 15%;
+        top: 25%;
+        font-size: 12px;
+    }
+    
+    
+    /* Estilo para o texto do alerta */
+    .alert-text {
+        color: #999; 
+        font-size: 14px;
         text-align: center;
-        margin-bottom: 20px;
-        font-family: "Arial", sans-serif;
-        font-size: 20px;
-        padding: 10px 20px; 
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-left: 20%; 
+        margin-left: 5%;
+        top: 16%;
+    }
+        
+    .status1 {
+        position: fixed;
+        top: 35%;
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        background-color: #387cf2;
+    }
+    
+    .status1 p {
+        margin: 0;
+        font-size: 32px;
+    }
+    
+    .status1 i {
+        margin-top: 10px;
+        font-size: 54px;
+    }
+    
+    .status1, 
+    .status2{
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+        position: absolute;
+        top: 35%;
+        left: 26%;
+        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+    }
+    
+    .status1{
+        background-color: #F2383A;
+    }
+    
+    .status2{
+        background-color: #F4DB00;
+    }
+    
+    .status1 p, 
+    .status2 p {
+        margin: 0; 
+        font-size: 32px; 
+    }
+    
+    .status1 i, 
+    .status2 i {
+        margin-top: 10px; 
+        font-size: 54px; 
+    }
+    
+    #graficoBarras {
+        position: fixed;
+        top: 55%;
+        max-width: 75%;
+        margin-left: 9%;
+    }
+    
+    .veiculo-historico {
+        width: 70%;
+        margin-top: 10%; 
+        margin-left: 10%; 
+        overflow-x: auto;
+    }
+    
+    .veiculo-historico table {
+        width: 100%;
+    }
+    
+    .veiculo-historico th {
+        background-color: #0073ba; 
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .veiculo-historico td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd; /* Linha divisória entre as células */
+        text-align: center;
+    }
+    
+    /* Estilo para a primeira célula do cabeçalho */
+    .veiculo-historico th:first-child {
+        border-top-left-radius: 8px; /* Borda arredondada superior esquerda */
+    }
+    
+    /* Estilo para a última célula do cabeçalho */
+    .veiculo-historico th:last-child {
+        border-top-right-radius: 8px; /* Borda arredondada superior direita */
+    }
+    
+    /* Estilo para as células ímpares */
+    .veiculo-historico tbody tr:nth-child(odd) {
+        background-color: #f2f2f2; /* Cor de fundo das linhas ímpares */
     }
 
     
