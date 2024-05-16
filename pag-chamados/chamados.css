@@ -62,3 +62,29 @@ button#create-chamado-btn a {
   text-decoration: none;
   color: #fff;
 }
+
+/* Estilos para telas menores que 800px de largura */
+@media screen and (max-width: 800px){
+  h1 {
+      width: 70%;
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: "Arial", sans-serif;
+      font-size: 20px;
+      padding: 10px 20px; 
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-left: 20%; 
+  }
+
+  table#task-content {
+    width: 60%;
+    margin-left: 30%;
+    font-size: 12px;
+  }
+  
+  button#create-chamado-btn {
+    top: 80%;
+    right: 10px;
+    padding: 8px 10px;
+  }
+}

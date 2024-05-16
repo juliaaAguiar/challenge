@@ -121,3 +121,68 @@ table td{
 table th {
     background-color: #f2f2f2;
 }
+
+/* Estilos para telas menores que 800px de largura */
+@media screen and (max-width: 800px){
+    h1 {
+        width: 80%;
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: "Arial", sans-serif;
+        font-size: 20px;
+        padding: 10px 20px; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-left: 20%; 
+    }
+
+    #date-filter {
+        margin-left: 12%;
+        padding: 1px; 
+        margin-top: 5px;
+    }
+    
+    /* Estilos para os botões */
+    button {
+        padding: 8px 8px;
+        margin-top: 10px;
+    }
+
+    .filters {
+        margin-bottom: 5px;
+        margin-left: 35%;
+        font-size: 13px;
+    }
+    
+    .filters label {
+        margin-right: 5px; /* Espaçamento direito entre as labels e os elementos */
+    }
+    
+    /* Estilos para o select de categoria */
+    #category-filter {
+        padding: 1px; 
+        margin-left: 4%;
+    }
+
+    #search-input {
+        padding: 1px; 
+        width: 180px; 
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+
+    #export-csv {
+        margin-left: 0%;
+    }
+
+    #table-container {
+        width: 60%;
+        margin-left: 20%;
+        font-size: 12px;
+    }
+    
+    table th,
+    table td{
+        padding: 5px;
+    }
+    
+}

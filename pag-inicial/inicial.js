@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const indicatorsData = [
         { label: 'Incidentes Hoje', value: '23' },
         { label: 'Erros', value: '115/500' },
-        { label: 'Taxa de Congestionamento', value: '30%' },
+        { label: 'Congestionamento', value: '30%' },
         { label: 'Status Fluxo', value: 'Normal' }
     ];
 

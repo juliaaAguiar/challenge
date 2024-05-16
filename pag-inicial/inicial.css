@@ -185,3 +185,78 @@ table th {
     transform: scale(1.02);
 }
 /* Gráficos */
+
+/* Estilos para telas menores que 800px de largura */
+@media screen and (max-width: 800px){
+    h1 {
+        width: 58%;
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: "Arial", sans-serif;
+        font-size: 20px;
+        padding: 10px 20px; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-left: 20%; 
+    }
+
+    #relatorio {
+        padding: 10px 10px;
+        margin-left: 10%;
+        margin-top:-5px;
+    }
+
+    .painel {
+        margin-left: 17%;
+        padding-bottom: 5px;
+        margin-right: 8%;
+    }
+    
+
+    .indicator { 
+        height: 40px; 
+        width: 73%;  
+        margin-bottom: 10px;
+        margin-left: 35%;
+        margin-right: 5%;
+    }
+    
+    .indicator h2 {
+        font-size: 12px; 
+        text-align: center;
+    }
+    
+    .indicator p {
+        font-size: 12px; 
+        text-align: center;
+    }
+
+    #table-container {
+        width: 68%; 
+        height: 40%;
+        max-height: 300px;
+        margin-left: 30%;  
+        font-size: 12px;    
+        scrollbar-width: thin;
+    }
+
+    table th,
+    table td {
+        padding: 4px; /* Reduzindo o espaço dentro das células */
+        
+    }
+
+    .graph-container {
+        flex-direction: column; /* Altera a direção do flex para empilhar os gráficos verticalmente */
+        align-items: center; /* Alinha os gráficos ao centro */
+    }
+
+    .graph-container #graph1,
+    .graph-container #graph2,
+    .graph-container #graph3 {
+        max-width: 280px; /* Define um tamanho máximo para os gráficos */
+        max-height: 250px; /* Permite que a altura se ajuste automaticamente */
+        margin-bottom: 20px;
+        margin-left: 20%;
+    }
+
+}

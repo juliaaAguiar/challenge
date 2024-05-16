@@ -57,3 +57,34 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+/* Estilos para telas menores que 800px de largura */
+@media screen and (max-width: 800px){
+    h1 {
+        font-size: 20px;
+    }
+
+    label {
+        display: inline-block;
+        width: 100px;
+        font-weight: bold;
+        margin-left: 23%;
+    }
+    
+    .container2 {
+        margin-left: 30%;
+        width: 68%;
+        margin-top: 10%;
+    }
+    
+    .form-group {
+        margin-bottom: 5px;
+    }
+    
+    
+    button {
+        left: 65%; 
+        width: 30%;
+        padding: 5px;
+    }
+}
