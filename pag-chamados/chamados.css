@@ -17,6 +17,7 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para tabela */
 table#task-content {
   width: 70%;
   border-collapse: collapse;
@@ -41,6 +42,7 @@ table#task-content tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
+/* Estilos para os botões */
 button#create-chamado-btn {
   position: absolute;
   top: 26%;

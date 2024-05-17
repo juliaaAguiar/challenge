@@ -26,6 +26,7 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
+/* Estilo página inicial pórticos */
 #porticos-container {
     position: fixed;
     top: 25%;
@@ -67,6 +68,9 @@ h1 {
     background-color: #ccc;
 }
 
+/* Estilo tela detalhes do pórtico*/
+
+/* Mapa */
 .circular-map {
     position: fixed; 
     width: 30vw;
@@ -78,7 +82,7 @@ h1 {
     z-index: 999; 
 }
 
-
+/* Tabela */
 #table-container {
     position: absolute;
     left: 15%;

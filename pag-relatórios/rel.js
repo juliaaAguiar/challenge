@@ -16,7 +16,7 @@ function filtrarTabela() {
     tables.forEach(function(table) {
         rows = table.getElementsByTagName("tr");
         for (i = 0; i < rows.length; i++) {
-            // Ignorar os cabeçalhos (tr com th)
+            // Ignorar os cabeçalhos na hora de filtrar, para que continuem visiveis 
             if (rows[i].getElementsByTagName("th").length > 0) {
                 continue;
             }
@@ -63,22 +63,19 @@ function exportToCSV() {
     });
 
     // Cria o conteúdo CSV
-    var csvContent = "\uFEFF"; // Adiciona o BOM (Byte Order Mark)
+    var csvContent = "\uFEFF"; 
     csvContent += headers.join(",") + "\n";
     csvContent += data.join("\n");
 
-    // Cria um Blob com o conteúdo CSV
     var blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
 
-    // Cria um link de download e simula o clique para baixar o arquivo
     var link = document.createElement("a");
     var url = URL.createObjectURL(blob);
     link.setAttribute("href", url);
-    link.setAttribute("download", "rel_VisaoGeral.csv"); // Adiciona a extensão .csv
+    link.setAttribute("download", "rel_VisaoGeral.csv"); 
     document.body.appendChild(link);
     link.click();
 
-    // Limpa o objeto URL após o download
     URL.revokeObjectURL(url);
     document.body.removeChild(link);
 }

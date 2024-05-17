@@ -93,6 +93,7 @@ function formatDate(day, month, year) {
     return day + '/' + month + '/' + year;
 }
 
+// Botões
         function applyFilters() {
             var categoryFilter = document.getElementById('category-filter').value;
             var dateFilter = document.getElementById('date-filter').value;
@@ -140,7 +141,7 @@ function formatDate(day, month, year) {
 
     function exportToCSV(data) {
         var csvContent = "data:text/csv;charset=utf-8,";
-        csvContent += "\uFEFF"; // BOM (Byte Order Mark) para indicar a codificação UTF-8
+        csvContent += "\uFEFF"; 
         csvContent += Object.keys(data[0]).join(",") + "\n";
         data.forEach(function (item) {
             var row = Object.values(item).join(",");

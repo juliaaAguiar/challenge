@@ -1,3 +1,4 @@
+// Criação "Armazenamento" Chamado
 document.addEventListener('DOMContentLoaded', function() {
     exibirChamados();
 

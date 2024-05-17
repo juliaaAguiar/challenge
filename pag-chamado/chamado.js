@@ -1,3 +1,4 @@
+// Criação Chamado
 document.addEventListener('DOMContentLoaded', function() {
     const parametros = new URLSearchParams(window.location.search);
     const alerta = parametros.get("alerta");

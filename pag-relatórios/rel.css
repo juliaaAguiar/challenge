@@ -13,7 +13,7 @@
 }
 /* Estilo da barra de rolagem */
 
-/* Estilos para o input de data */
+/* Estilos para os botões */
 #date-filter {
     margin-left: 69%;
     padding: 8px; 
@@ -23,7 +23,6 @@
     margin-bottom: 10px;
 }
 
-/* Estilos para os botões */
 button {
     padding: 10px 20px;
     margin-right: 5px;
@@ -113,7 +112,6 @@ h1 {
         padding: 5px; 
     }
     
-    /* Estilos para os botões */
     button {
         padding: 8px 8px;
     }

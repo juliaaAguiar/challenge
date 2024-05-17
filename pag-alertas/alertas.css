@@ -26,7 +26,6 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para o contêiner dos filtros */
 .filters {
     margin-bottom: 20px;
     margin-left: 15%;
@@ -36,7 +35,6 @@ h1 {
     margin-right: 10px; /* Espaçamento direito entre as labels e os elementos */
 }
 
-/* Estilos para o select de categoria */
 #category-filter {
     padding: 5px;
     border-radius: 5px;
@@ -44,7 +42,6 @@ h1 {
     outline: none;
 }
 
-/* Estilos para o input de data */
 #date-filter {
     padding: 5px;
     border-radius: 5px;
@@ -84,10 +81,7 @@ button {
     background-color: #0073ba;
 }
 
-#export-csv {
-    margin-left: 23%;
-}
-
+/* Estilos para a tabela */
 #table-container {
     position: relative;
     top: 25%;
@@ -141,7 +135,6 @@ table th {
         margin-top: 5px;
     }
 
-    /* Estilos para os botões */
     button {
         padding: 8px 8px;
         margin-top: 10px;
@@ -154,10 +147,9 @@ table th {
     }
 
     .filters label {
-        margin-right: 5px; /* Espaçamento direito entre as labels e os elementos */
+        margin-right: 5px; 
     }
 
-    /* Estilos para o select de categoria */
     #category-filter {
         padding: 1px;
         margin-left: 4%;

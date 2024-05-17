@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 } else if (item[key] === 'OK') {
                     div.style.backgroundColor = '#149D52';
-                    div.style.cursor = 'pointer'; // A chave final foi corrigida aqui
+                    div.style.cursor = 'pointer'; 
                     div.addEventListener('click', function () {
                         window.location.href = "";
                     });

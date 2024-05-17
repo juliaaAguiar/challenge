@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 pointRadius: 2 // Define o tamanho dos pontos
             }
         ]
-    };                
-    
+    };
+
     // Opções para o gráfico de dispersão
     var scatterOptions = {
         responsive: false,
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     text: 'Horário'
                 },
                 grid: {
-                    display: false // Remover linhas de grade do eixo X
+                    display: false // Remove linhas do eixo X
                 }
             },
             y: {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     text: 'Fluxo'
                 },
                 grid: {
-                    display: false // Remover linhas de grade do eixo Y
+                    display: false // Remover linhas do eixo Y
                 }
             }
         },
@@ -78,122 +78,118 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    
 
     var scatterCtx = document.getElementById('graph1').getContext('2d');
     var scatterChart = new Chart(scatterCtx, {
-        type: 'line', // Alterado para tipo de gráfico de linha
+        type: 'line', // Altera para tipo de gráfico de linha
         data: newData,
         options: scatterOptions
     });
 
-    
+    // Gráfico de rosca
+    var doughnutCtx = document.getElementById('graph2').getContext('2d');
+    var doughnutChart = new Chart(doughnutCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Caminhão', 'Carro', 'Moto', 'Ônibus'],
+            datasets: [{
+                label: 'Quantidade',
+                data: [10, 20, 30, 40, 50],
+                backgroundColor: [
+                    '#C7CEFF',
+                    '#1186F6',
+                    '#035AAC',
+                    '#37375C',
+                    '#00519E'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: false,
+            maintainAspectRatio: false,
+            cutout: '70%', // Define a porcentagem de espessura da rosca
+            scales: {
+                x: {
+                    display: false,
+                },
+                y: {
+                    display: false,
+                }
+            },
+            plugins: {
+                title: {
+                    display: true, // Exibir o título
+                    text: 'Distribuição Fluxo de Veículos', 
+                    font: {
+                        size: 16 
+                    }
+                },
+                legend: {
+                    labels: {
+                    }
+                }
+            }
+        }
+    });
 
-// Gráfico de rosca
-var doughnutCtx = document.getElementById('graph2').getContext('2d');
-var doughnutChart = new Chart(doughnutCtx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Caminhão', 'Carro', 'Moto', 'Ônibus'],
-        datasets: [{
-            label: 'Quantidade',
-            data: [10, 20, 30, 40, 50],
-            backgroundColor: [
-                '#C7CEFF',
-                '#1186F6',
-                '#035AAC',
-                '#37375C',
-                '#00519E'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
+    // Gráfico de barras
+    var barOptions = {
         responsive: false,
         maintainAspectRatio: false,
-        cutout: '70%', // Define a porcentagem de espessura da rosca
         scales: {
             x: {
-                display: false,
+                title: {
+                    display: true,
+                    text: 'Dias da Semana'
+                },
+                grid: {
+                    display: false // Remover linhas do eixo X
+                }
             },
             y: {
-                display: false,
+                title: {
+                    display: true,
+                    text: 'Número de Veículos'
+                },
+                grid: {
+                    display: false // Remover linhas do eixo Y
+                },
+                beginAtZero: true
             }
         },
         plugins: {
             title: {
                 display: true, // Exibir o título
-                text: 'Distribuição Fluxo de Veículos', 
+                text: 'Fluxo de Veículos por Dia da Semana',
                 font: {
-                    size: 16 
-                }
-            },
-            legend: {
-                labels: {
+                    size: 16
                 }
             }
         }
-    }
-});
+    };
 
-
-// Gráfico de barra
-var barOptions = {
-    responsive: false,
-    maintainAspectRatio: false,
-    scales: {
-        x: {
-            title: {
-                display: true,
-                text: 'Dias da Semana'
-            },
-            grid: {
-                display: false // Remover linhas de grade do eixo X
-            }
+    var barCtx = document.getElementById('graph3').getContext('2d');
+    var barChart = new Chart(barCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
+            datasets: [{
+                data: [12000, 3500, 7000, 11000, 9000, 13000, 5000],
+                backgroundColor: [
+                    '#035AAC',
+                    '#37375C',
+                    '#00519E'
+                ],
+                borderWidth: 1
+            }]
         },
-        y: {
-            title: {
-                display: true,
-                text: 'Número de Veículos'
-            },
-            grid: {
-                display: false // Remover linhas de grade do eixo Y
-            },
-            beginAtZero: true
-        }
-    },
-    plugins: {
-        title: {
-            display: true,
-            text: 'Fluxo de Veículos por Dia da Semana',
-            font: {
-                size: 16
-            }
-        }
-    }
-};
+        options: barOptions
+    });
 
-var barCtx = document.getElementById('graph3').getContext('2d');
-var barChart = new Chart(barCtx, {
-    type: 'bar',
-    data: {
-        labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
-        datasets: [{
-            data: [12000, 3500, 7000, 11000, 9000, 13000, 5000],
-            backgroundColor: [
-                '#035AAC',
-                '#37375C',
-                '#00519E'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: barOptions
-});
-
-// Oculta a legenda do gráfico de barras
-barChart.options.plugins.legend.display = false;
-barChart.update();
+    // Oculta a legenda do gráfico de barras
+    barChart.options.plugins.legend.display = false;
+    barChart.update();
 
     // Tabela
     var data = [
@@ -203,7 +199,6 @@ barChart.update();
         { Identificação: 'Pórtico 4', Categoria: 'Pórtico', Data: '02/01/2024', Status: 'Erro', Id: 4},
     ];
 
-    // Criação da tabela
     var tableContainer = document.getElementById('table-container');
     var table = document.createElement('table');
     var thead = document.createElement('thead');
@@ -220,22 +215,21 @@ barChart.update();
 
     table.appendChild(thead);
 
-// Segundo cabeçalho da tabela
-var headRow = document.createElement('tr');
-for (var key in data[0]) {
-    var th = document.createElement('th');
-    if (key === 'Status') {
-        th.textContent = 'Status';
-    } else if (key === 'Id') {
-        th.textContent = 'Ação'; // Renomeando a última coluna
-    } else {
-        th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+    // Segundo cabeçalho da tabela
+    var headRow = document.createElement('tr');
+    for (var key in data[0]) {
+        var th = document.createElement('th');
+        if (key === 'Status') {
+            th.textContent = 'Status';
+        } else if (key === 'Id') {
+            th.textContent = 'Ação'; // Renomeando a última coluna
+        } else {
+            th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+        }
+        th.style.textAlign = 'center';
+        headRow.appendChild(th);
     }
-    th.style.textAlign = 'center';
-    headRow.appendChild(th);
-}
-thead.appendChild(headRow);
-
+    thead.appendChild(headRow);
 
     // Dados estilizados
     data.forEach(function (item) {
@@ -270,16 +264,16 @@ thead.appendChild(headRow);
                 cell.appendChild(div);
             } else if (key === 'Id') 
             {
-            var button = document.createElement('button');
-            button.setAttribute('id', `problema-${item[key]}`);
-            button.textContent = 'Abrir Chamado';
-            button.value = item[key];
-            button.style.cursor = 'pointer';
-            button.style.borderRadius = '5px';
-            button.style.padding = '5px 10px'; 
-            button.style.border = 'none'; 
-            cell.appendChild(button);
-            cell.style.textAlign = 'center';
+                var button = document.createElement('button');
+                button.setAttribute('id', `problema-${item[key]}`);
+                button.textContent = 'Abrir Chamado';
+                button.value = item[key];
+                button.style.cursor = 'pointer';
+                button.style.borderRadius = '5px';
+                button.style.padding = '5px 10px'; 
+                button.style.border = 'none'; 
+                cell.appendChild(button);
+                cell.style.textAlign = 'center';
             } 
             else 
             {
@@ -320,7 +314,6 @@ document.addEventListener('DOMContentLoaded', function () {
         { label: 'Status Fluxo', value: 'Normal' }
     ];
 
-    // Criar indicadores
     indicatorsData.forEach(data => {
         const indicator = document.createElement('div');
         indicator.classList.add('indicator');

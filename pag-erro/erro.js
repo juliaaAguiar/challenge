@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Dados do gráfico
+    // Gráfico tela Erro
     var dados = {
         labels: ['09/05/2023', '10/05/2023', '11/05/2023', '12/05/2023', '13/05/2023'], // Rótulos do eixo x (datas)
         datasets: [{
@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }]
     };
 
-    // Encontrando o valor máximo dos dados
     var maxDataValue = Math.max(...dados.datasets[0].data);
 
     // Opções do gráfico
@@ -30,17 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     text: 'Quantidade'
                 },
                 ticks: {
-                    beginAtZero: true // Começa o eixo y em zero
+                    beginAtZero: true 
                 },
                 suggestedMax: maxDataValue + 5 // Definindo o valor máximo sugerido para a escala do eixo y
             }
         }
     };
 
-    // Obtém o contexto do canvas
     var ctx = document.getElementById('graficoBarras').getContext('2d');
 
-    // Cria o gráfico de barras
     var grafico = new Chart(ctx, {
         type: 'bar',
         data: dados,
