@@ -201,6 +201,11 @@ header {
 
 /* Estilos para telas menores que 800px de largura */
 @media screen and (max-width: 800px) {
+    .naveg a{
+        display: flex;
+        margin-bottom: 5px;
+    }
+
     header {
         padding: 10px;
     }
@@ -260,3 +265,14 @@ header {
     }
 }
 
+/* Estilos para telas menores que 800px de largura */
+@media (min-width: 801px) and (max-width: 1500px) {
+    .naveg a {
+        display: flex;
+        padding: 0;
+        font-size: 11px;
+    }
+    }
+
+
+}
